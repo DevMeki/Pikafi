@@ -1,68 +1,87 @@
+let registerBtn = document.querySelector("#register");
 
-//register user
-document.querySelector(".registerBtn").addEventListener("click", function () {
+registerBtn.addEventListener("click", function () {
+    let email = document.querySelector("#email").value;
+    let username = document.querySelector("#username").value;
+    let password = document.querySelector("#password").value;
+    let confirm_password = document.querySelector("#confirm_password").value;
+    let error_text = document.querySelector(".error_text");
 
-
-    //get errorText container box
-    let error = document.querySelector(".errortext");
-    //get user input
-    let username = document.querySelector(".username");
-    let number = document.querySelector(".number");
-    let pin = document.querySelector(".pin");
-    let password = document.querySelector(".password");
-    let re_password = document.querySelector(".re-password");
-    let inviteCode = document.querySelector(".inviteCode");
-    var checkboxElement = document.getElementById('checkbox');
-    var checkbox = checkboxElement ? checkboxElement.checked : false;
-    let gender = document.querySelector(".gender");
-
-    //validate user input
-    if (username.value == "") {
-        error.innerHTML = "Enter a valid Username.";
-    } else if (number.value == "") {
-        error.innerHTML = "Enter a valid Phone Number.";
-    } else if (pin.value == "") {
-        error.innerHTML = "Enter a valid withdrawal Pin.";
-    } else if (password.value == "") {
-        error.innerHTML = "Enter a valid Password.";
-    } else if (re_password.value == "") {
-        error.innerHTML = "Confirm your Password.";
-    } else if (re_password.value !== password.value) {
-        error.innerHTML = "Your password do not Match.";
-    } else if (inviteCode.value == "") {
-        error.innerHTML = "Enter a valid Invitation Code.";
-    } else if (!checkbox) {
-        error.innerHTML = "Agree to our Terms and Conditions.";
+    if (email == "") {
+        error_text.innerHTML = "Email is empty";
+    } else if (username == "") {
+        error_text.innerHTML = "Username is empty";
+    } else if (password == "") {
+        error_text.innerHTML = "Password is empty";
+    } else if (confirm_password == "") {
+        error_text.innerHTML = "Confirm password is empty";
+    } else if (confirm_password !== password) {
+        error_text.innerHTML = "Password does not match";
+    } else if (password.length < 8) {
+        error_text.innerHTML = "Password is weak (must be 8 characters and above)";
+    } else if (!isNaN(password)) {
+        error_text.innerHTML = "Password must contain alphanumeric characters";
     } else {
-        let data = "username=" + encodeURIComponent(username.value) + "&number=" + encodeURIComponent(number.value) + "&pin=" + encodeURIComponent(pin.value) + "&password=" + encodeURIComponent(password.value) + "&inviteCode=" + encodeURIComponent(inviteCode.value) + "&gender=" + encodeURIComponent(gender.value);
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("POST", "process_sign_up.php", true);
-        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-                // Handle success
-                var return_data = JSON.parse(xmlhttp.responseText);
-                if (return_data.status === "success") {
-                    error.innerHTML = "";
-                    document.querySelector(".succestext").innerHTML = return_data.message;
-                    //clear user data
-                    username.value = "";
-                    number.value = "";
-                    pin.value = "";
-                    password.value = "";
-                    re_password.value = "";
-                    inviteCode.value = "";
-                    // Redirect to dashboard.php on success
-                    window.location.replace("../user/dashboard.php");
+        // confirm_password
+        error_text.innerHTML = "";
+
+
+        // Make an AJAX request
+        $.ajax({
+            type: "POST",
+            url: "process_register.php", // replace with your PHP script URL
+            data: "email=" + encodeURIComponent(email) + "&username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password) + "&confirm_password=" + encodeURIComponent(confirm_password),
+            // data: form_data,
+            dataType: "json",
+
+            success: function (responseData) {
+                // console.log('Response:', responseData);
+
+                if (responseData.status === 'info') {
+                    // Display information for 'info' status
+                    Swal.fire({
+                        title: 'Information',
+                        text: responseData.message,
+                        icon: 'info',
+                        confirmButtonText: 'OK'
+                    });
+                } else if (responseData.status === 'success') {
+                    // Handle success status
+                    Swal.fire({
+                        title: 'Success',
+                        text: responseData.message,
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Simulate a mouse click:
+                            window.location.href = "login.html";
+                        }
+                    });
                 } else {
-                    error.innerHTML = return_data.message;
+                    // Handle other statuses
+                    Swal.fire({
+                        title: 'Status: ' + responseData.status,
+                        text: responseData.message,
+                        icon: 'info',
+                        confirmButtonText: 'OK'
+                    });
                 }
-            } else {
-                console.log("Error parsing JSON:", return_data);
+            },
+            error: function (error) {
+                // Display SweetAlert notification for error
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'An error occurred while processing your request.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+
+                console.log(error);
             }
-        }
-        xmlhttp.send(data);
+        });
 
     }
 
 });
+

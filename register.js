@@ -17,7 +17,11 @@ registerBtn.addEventListener("click", function () {
         error_text.innerHTML = "Confirm password is empty";
     } else if (confirm_password !== password) {
         error_text.innerHTML = "Password does not match";
-    }  else {
+    } else if (password.length < 8) {
+        error_text.innerHTML = "Password is weak (must be 8 characters and above)";
+    } else if (!isNaN(password)) {
+        error_text.innerHTML = "Password must contain alphanumeric characters";
+    } else {
         // confirm_password
         error_text.innerHTML = "";
 
@@ -26,20 +30,17 @@ registerBtn.addEventListener("click", function () {
         $.ajax({
             type: "POST",
             url: "process_register.php", // replace with your PHP script URL
-            data: "email=" + encodeURIComponent(email) + "&username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password),
+            data: "email=" + encodeURIComponent(email) + "&username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password) + "&confirm_password=" + encodeURIComponent(confirm_password),
             // data: form_data,
             dataType: "json",
 
             success: function (responseData) {
                 // console.log('Response:', responseData);
 
-                // Reset status after the request is complete
-                error_text.hide();
-
                 if (responseData.status === 'info') {
                     // Display information for 'info' status
                     Swal.fire({
-                        title: responseData.title,
+                        title: 'Information',
                         text: responseData.message,
                         icon: 'info',
                         confirmButtonText: 'OK'
@@ -47,10 +48,15 @@ registerBtn.addEventListener("click", function () {
                 } else if (responseData.status === 'success') {
                     // Handle success status
                     Swal.fire({
-                        title: responseData.title,
+                        title: 'Success',
                         text: responseData.message,
                         icon: 'success',
                         confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Simulate a mouse click:
+                            window.location.href = "login.html";
+                        }
                     });
                 } else {
                     // Handle other statuses
