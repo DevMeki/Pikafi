@@ -20,12 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST["password"];
 
     if (empty($email)) {
-        // echo "username is empty";
         $output = json_encode(array('status' => 'error', 'message' => 'Email is empty'));
         die($output);
     } else {
         if (empty($password)) {
-            // echo "phone is empty";
             $output = json_encode(array('status' => 'error', 'message' => 'Password is empty'));
             die($output);
         } else {
