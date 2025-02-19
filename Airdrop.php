@@ -38,7 +38,8 @@
 
         #boostCont>button,
         #Alliance>button,
-        #claim {
+        #claim,
+        #billCont {
             background-color: #5382AD;
         }
     </style>
@@ -50,7 +51,7 @@
 
 
     <!-- pikafi balance, mining rate and claim starts here  -->
-    <div class="text-center bg-light fw-semibold p-3 rounded-3" id="Pikaficont">
+    <div class="text-center bg-secondary text-light fw-semibold p-3 rounded-3" id="Pikaficont">
         <div class="">Pikafi Balance</div>
         <img src="images/logo.png" class="mb-2">
         <span id="PikafiBalance" class="fs-1">20,222.34</span>
@@ -69,7 +70,7 @@
                     </button>
                     <div>
                         <img src="images/logo.png" class="mb-2">
-                        <span id="UnclaimedBalance" class="fs-4 text-light">10,23.56</span>
+                        <span id="UnclaimedBalance" class="fs-4 text-light">10,023.56</span>
                     </div>
                 </div>
             </div>
@@ -119,7 +120,7 @@
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
                                         <img src="images/coin.png" class="" id="coinimg">
-                                        <span id="BoostPrice" class="fs-6 fw-bold">100 coin</span>
+                                        <span id="BoostPrice" class="fs-6 fw-bold">100 </span>
                                     </button>
                                 </div>
                             </div>
@@ -133,7 +134,7 @@
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
                                         <img src="images/coin.png" class="" id="coinimg">
-                                        <span id="BoostPrice" class="fs-6 fw-bold">600 coin</span>
+                                        <span id="BoostPrice" class="fs-6 fw-bold">600 </span>
                                     </button>
                                 </div>
                             </div>
@@ -147,7 +148,7 @@
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
                                         <img src="images/coin.png" class="" id="coinimg">
-                                        <span id="BoostPrice" class="fs-6 fw-bold">1500 coin</span>
+                                        <span id="BoostPrice" class="fs-6 fw-bold">1500 </span>
                                     </button>
                                 </div>
                             </div>
@@ -161,7 +162,7 @@
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
                                         <img src="images/coin.png" class="" id="coinimg">
-                                        <span id="BoostPrice" class="fs-6 fw-bold">5000 coin</span>
+                                        <span id="BoostPrice" class="fs-6 fw-bold">5000 </span>
                                     </button>
                                 </div>
                             </div>
@@ -178,7 +179,7 @@
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
                                         <img src="images/coin.png" class="" id="coinimg">
-                                        <span id="BoostPrice" class="fs-6 fw-bold">5,900 coin</span>
+                                        <span id="BoostPrice" class="fs-6 fw-bold">5,900 </span>
                                     </button>
                                 </div>
                             </div>
@@ -204,16 +205,20 @@
 
 
     <!-- active miners starts here -->
-    <div class="bg-light p-1 rounded-3 fw-bold">
+    <div class="bg-secondary p-1 rounded-3 fw-bold">
         <!-- utility starts here  -->
-        <div class="text-center mb-3">
+        <div class="text-center text-light mb-3">
             Update Your Tax and Utility Bills
-            <button id="PayBills" class="rounded-pill text-light fw-bold">Here</button>
+            <button id="PayBills" class="rounded-pill text-light fw-bold border-0" data-bs-toggle="modal" data-bs-target="#BillsModalbox"
+                type="button">Here</button>
+
+            <!-- this timer below counts the amount of time left for the tax and utility bills.
+            mining stops once it gets to zero  -->
             <div id="BillTimer"> 00:D 00:HR 00:SEC </div>
         </div>
         <!-- utility ends here  -->
         <div class="row">
-            <div class="col-md">
+            <div class="col-md-6">
                 <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-2 mt-md-0">
                     <div class="col">
                         <div id="minertype">TECH</div>
@@ -228,7 +233,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md">
+            <div class="col-md-6">
                 <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-md-0">
                     <div class="col">
                         <div id="minertype">TECH</div>
@@ -243,9 +248,84 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-6">
+                <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-md-0">
+                    <div class="col">
+                        <div id="minertype">Telecom</div>
+                        <div id="minerUpgradePrice" class="fw-semibold">500</div>
+                    </div>
+                    <div class="col">
+                        <div id="minerRate">0.023/hr</div>
+                        <div id="minerLevel" class="fw-semibold">level 0</div>
+                    </div>
+                    <div class="col mt-1 mb-1">
+                        <button class="rounded-pill" id="upgrade">Activate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-md-0">
+                    <div class="col">
+                        <div id="minertype">Crypto</div>
+                        <div id="minerUpgradePrice" class="fw-semibold">500</div>
+                    </div>
+                    <div class="col">
+                        <div id="minerRate">0.023/hr</div>
+                        <div id="minerLevel" class="fw-semibold">level 0</div>
+                    </div>
+                    <div class="col mt-1 mb-1">
+                        <button class="rounded-pill" id="upgrade">Activate</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- active miners ends here -->
+
+    <!-- modal box for tax and utility bills starts here   -->
+    <div id="BillsModalbox" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modalCont">
+                <div class="modal-header">
+                    <h4 class="fw-bold ms-2 mt-2">Renew your Tax and Utility Bills to continue mining</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <!-- modal header ends here  -->
+
+                <!-- modal body starts here  -->
+                <div class="modal-body bg-light text-light">
+                    <div class="row border-0 rounded-2 p-2 fw-bold mt-2" id="billCont">
+                        <div class="col-8">
+                            Renew Your Bills
+                        </div>
+                        <div class="col-4 text-end">
+                            <button type="button" class="rounded-pill border-2 mt-2 p-1 pe-2 ps-2" id="BoostBtn">
+                                <img src="images/coin.png" class="" id="coinimg">
+                                <span id="BoostPrice" class="fs-6 fw-bold">200 </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row border-0 rounded-2 p-2 fw-bold mt-2" id="billCont">
+                        <div class="col-8">
+                            Set up automatic bill renewal for the next 24 hours.
+                        </div>
+                        <div class="col-4 text-end">
+                            <button class="rounded-pill border-2 mt-2 p-1 pe-2 ps-2" id="BoostBtn">
+                                <img src="images/coin.png" class="" id="coinimg">
+                                <span id="BoostPrice" class="fs-6 fw-bold">3900 </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- modal body ends here -->
+            </div>
+        </div>
+    </div>
+    <!-- modal box for tax and utility bills ends here   -->
 
     <!-- footer starts here -->
 

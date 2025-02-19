@@ -65,13 +65,15 @@
                 <div class="modal-body bg-light">
                     <ul class="list-group list-group-flush text-start fw-semibold">
                         <li class="list-group-item border rounded-2" id="listItem">
+                        <p class="text-light">Add Your Wallet Address</p>
                             Enter your BEP20 address from a non-custodial wallet such as Metamask, Trust Wallet, or
                             similar.
                             <input type="text" placeholder="BEP20 or EVM address"
-                                class="border-0 w-100 mt-1 border rounded-2">
+                                class="border-0 w-100 mt-1 border ps-2 rounded-2">
                         </li>
                         <li class="list-group-item mt-2 border rounded-2" id="listItem">
-                            <label for="imageUpload">Upload an image:</label>
+                            <p class="text-light">Update Your Profile Picture</p>
+                            <label for="imageUpload">Select an image:</label>
                             <input type="file" id="imageUpload" name="image-upload" accept="image/*">
 
                         </li>
