@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +11,13 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <style>
-        body{
+        body {
             /* background-image: url(images/bg.png);
             background-size: cover; */
             background-color: #151d27;
 
         }
+
         #main {
             background-image: url(images/reg&log\ Bg.png);
             background-size: cover;
@@ -41,8 +43,7 @@
         }
 
         .formcont>input {
-            padding-bottom: 3%;
-            margin-top: 3%;
+            padding: 3%;
             width: 100%;
             border: none;
             border-bottom: 1px solid #49688D;
@@ -73,6 +74,9 @@
             margin-left: 20%;
             margin-right: 20%;
         } */
+         #CandT{
+            font-size: 14px;
+         }
     </style>
 </head>
 
@@ -106,6 +110,15 @@
             </div>
             <!-- reg info ends here  -->
 
+            <div class="container-fluid ms-2 me-4" id="CandT">
+                <!-- Terms and conditions starts here  -->
+                <div class="text-start">
+                    <p> <input type="checkbox"> I Have Read and Agree to PIKAFI'S <a href="TandC.html">Terms and Conditions</a><br>
+                        <input type="checkbox"> I Aknowledge that I'm not a citizen of USA or UK nor do I base in any of the countries</p>
+                </div>
+                <!-- Terms and conditions ends here  -->
+            </div>
+
             <!-- button starts here -->
             <div class="btncont">
                 <p class="text-danger text-center error_text"></p>
@@ -120,8 +133,11 @@
         <div class="col-md-4"></div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
     <script src="register.js"></script>
 </body>
+
 </html>

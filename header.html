@@ -1,0 +1,286 @@
+<style>
+    #coinBalanceCont {
+        background-color: #5382AD;
+        display: flex;
+        justify-content: center;
+        border-radius: 25px;
+    }
+
+    img {
+        width: 25px;
+        height: 25px;
+    }
+
+    #IngameCoin {
+        width: 40px;
+        height: 40px;
+    }
+
+    #bnbimg {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    i {
+        color: #41c1b2;
+    }
+
+    #AirdropNavbar {
+        background-color: #5382AD;
+        margin-top: 5px;
+        border-radius: 25px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li:hover {
+        background-color: white;
+        border-radius: 25px;
+        /* color: #5382AD; */
+    }
+
+    #modalCont {
+        background-color: #00fa89;
+    }
+
+    #priceOption {
+        background-color: #5382AD;
+    }
+</style>
+
+
+<!-- header containing in-game coin balance and menu starts here  -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+        <!-- coin abalance container strts here  -->
+        <div class="col-7 p-1 navbar-brand gap-2" id="coinBalanceCont" b>
+            <img src="images/coin.png" class="mt-1">
+            <div class="fw-bold" id="IngameBalance">10,000</div>
+            <button class="border-0 rounded-5" data-bs-toggle="modal" data-bs-target="#BuyCoin" type="button">
+                <i class="bi bi-plus-circle-fill"></i>
+            </button>
+        </div>
+        <!-- coin balance container ends here  -->
+
+        <!-- button starts here -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#AirdropNavbar"
+            aria-controls="AirdropNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- button ends here  -->
+
+        <div class="collapse navbar-collapse " id="AirdropNavbar">
+            <ul class="pb-2 nav nav-pills nav-fill gap-2 gap-md-4 p-1 rounded-5 shadow-sm" id="pillNav2" role="tablist"
+                style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-light);">
+                <!-- Li starts here -->
+                <li class="nav-item">
+                    <a href="Airdrop.php"><button class="nav-link rounded-5" id="home-tab" data-bs-toggle="tab"
+                            type="button" aria-selected="true">Mine Pikafi</button></a>
+                </li>
+                <li class="nav-item">
+                    <a href="Task.php"><button class="nav-link rounded-5" id="Airdrop-tab" data-bs-toggle="tab"
+                            type="button" aria-selected="false">Task</button></a>
+                </li>
+                <li class="nav-item">
+                    <a href="friends.php"> <button class="nav-link rounded-5" id="social-tab" data-bs-toggle="tab"
+                            type="button" aria-selected="false">Friends</button></a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.php"><button class="nav-link rounded-5" id="profile-tab" data-bs-toggle="tab"
+                            type="button" aria-selected="false">Profile</button></a>
+                </li>
+                <li class="nav-item">
+                    <a href="Home.html"><button class="nav-link rounded-5" id="profile-tab" data-bs-toggle="tab"
+                            type="button" aria-selected="false">About</button></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- header containing in-game coin balance and menu ends here  -->
+
+<!-- Buy in-game coin Balance starts here -->
+<div id="BuyCoin" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modalCont">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <img src="images/coin.png" class="mt-1" id="IngameCoin">
+                </div>
+                <h1 class="fw-bold ms-2 mt-2">In-game Coin</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+            </div>
+            <!-- modal header ends here  -->
+
+            <!-- modal body starts here  -->
+
+            <div class="modal-body bg-light">
+                <p class="text-start">
+                    These are In-game Coins. <br>
+                    Complete quests and invite friends to earn additional coins.<br>
+                    You can also purchase more here.
+
+                <p class="text-warning fw-semibold">NOTE: <span class="text-dark">Any funds deposited cannot be
+                        withdrawn
+                        directly. To recover your funds, you must play the game, accumulate as many Pikafi as possible,
+                        and wait until after the Token Generation Event (TGE) and listing. Once completed, you can swap
+                        your Pikafi for USDT.</span></p>
+                </p>
+                <!-- price options starts here -->
+                <button class="w-100 border-0" data-bs-toggle="modal" data-bs-target="#SendBnb" type="button">
+                    <div class="row rounded-3 mt-1 pt-1" id="priceOption">
+                        <div class="col-6 text-start">
+                            <img src="images/coin.png" class="mb-2">
+                            <span id="BuyAmount" class="fs-3 fw-bold">1000</span>
+                        </div>
+                        <div class="col-6 text-end">
+                            <img src="images/bnb.png" class="mb-2" id="bnbimg">
+                            <span id="BuyPrice" class="fs-3 fw-bold">0.005 BNB</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="w-100 border-0" data-bs-toggle="modal" data-bs-target="#SendBnb" type="button">
+                    <div class="row rounded-3 mt-1 pt-1" id="priceOption">
+                        <div class="col-6 text-start">
+                            <img src="images/coin.png" class="mb-2">
+                            <span id="BuyAmount" class="fs-3 fw-bold">10,000</span>
+                        </div>
+                        <div class="col-6 text-end">
+                            <img src="images/bnb.png" class="mb-2" id="bnbimg">
+                            <span id="BuyPrice" class="fs-3 fw-bold">0.045 BNB</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="w-100 border-0" data-bs-toggle="modal" data-bs-target="#SendBnb" type="button">
+                    <div class="row rounded-3 mt-1 pt-1" id="priceOption">
+                        <div class="col-6 text-start">
+                            <img src="images/coin.png" class="mb-2">
+                            <span id="BuyAmount" class="fs-3 fw-bold">50,000</span>
+                        </div>
+                        <div class="col-6 text-end">
+                            <img src="images/bnb.png" class="mb-2" id="bnbimg">
+                            <span id="BuyPrice" class="fs-3 fw-bold">0.21 BNB</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="w-100 border-0" data-bs-toggle="modal" data-bs-target="#SendBnb" type="button">
+                    <div class="row rounded-3 mt-1 pt-1" id="priceOption">
+                        <div class="col-6 text-start">
+                            <img src="images/coin.png" class="mb-2">
+                            <span id="BuyAmount" class="fs-3 fw-bold">100,000</span>
+                        </div>
+                        <div class="col-6 text-end">
+                            <img src="images/bnb.png" class="mb-2" id="bnbimg">
+                            <span id="BuyPrice" class="fs-3 fw-bold">0.4 BNB</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="w-100 border-0" data-bs-toggle="modal" data-bs-target="#SendBnb" type="button">
+                    <div class="row rounded-3 mt-1 pt-1" id="priceOption">
+                        <div class="col-6 text-start">
+                            <img src="images/coin.png" class="mb-2">
+                            <span id="BuyAmount" class="fs-3 fw-bold">250,000</span>
+                        </div>
+                        <div class="col-6 text-end">
+                            <img src="images/bnb.png" class="mb-2" id="bnbimg">
+                            <span id="BuyPrice" class="fs-3 fw-bold">1 BNB</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="w-100 border-0" data-bs-toggle="modal" data-bs-target="#SendBnb" type="button">
+                    <div class="row rounded-3 mt-1 pt-1" id="priceOption">
+                        <div class="col-6 text-start">
+                            <img src="images/coin.png" class="mb-2">
+                            <span id="BuyAmount" class="fs-3 fw-bold">500,000</span>
+                        </div>
+                        <div class="col-6 text-end">
+                            <img src="images/bnb.png" class="mb-2" id="bnbimg">
+                            <span id="BuyPrice" class="fs-3 fw-bold">1.8 BNB</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="w-100 border-0" data-bs-toggle="modal" data-bs-target="#SendBnb" type="button">
+                    <div class="row rounded-3 mt-1 pt-1" id="priceOption">
+                        <div class="col-6 text-start">
+                            <img src="images/coin.png" class="mb-2">
+                            <span id="BuyAmount" class="fs-3 fw-bold">1,000,000</span>
+                        </div>
+                        <div class="col-6 text-end">
+                            <img src="images/bnb.png" class="mb-2" id="bnbimg">
+                            <span id="BuyPrice" class="fs-3 fw-bold">3.2 BNB</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="w-100 border-0" data-bs-toggle="modal" data-bs-target="#SendBnb" type="button">
+                    <div class="row rounded-3 mt-1 pt-1" id="priceOption">
+                        <div class="col-6 text-start">
+                            <img src="images/coin.png" class="mb-2">
+                            <span id="BuyAmount" class="fs-3 fw-bold">3,000,000</span>
+                        </div>
+                        <div class="col-6 text-end">
+                            <img src="images/bnb.png" class="mb-2" id="bnbimg">
+                            <span id="BuyPrice" class="fs-3 fw-bold">6 BNB</span>
+                        </div>
+                    </div>
+                </button>
+                <!-- price options ends here  -->
+            </div>
+            <!-- modal body ends here -->
+        </div>
+    </div>
+</div>
+<!-- Buy in-game coin Balance here here -->
+
+<!-- payment and payment verification starts here -->
+<div id="SendBnb" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modalCont">
+            <div class="modal-header">
+                <h2 class="fw-bold ms-2 mt-2">Complete Your Payment:</h2>
+                <button type="button" class="btn-close" data-bs-toggle="modal" data-bs-target="#BuyCoin"
+                    aria-label="close"></button>
+            </div>
+            <!-- modal header ends here  -->
+
+            <!-- modal body starts here  -->
+
+            <div class="modal-body bg-light text-center fw-semibold">
+                Send <span id="BnbAmount">0.005</span> BNB to the
+                address below and upload Your Transaction Hash for Confirmation
+
+                <!-- payment address and barcode starts here -->
+                <div>
+
+                </div>
+                <!-- payment address and barcode ends here -->
+
+                <!-- prove after payment starts here -->
+                <div class="mt-2">
+                    Upload Transaction hash: <br>
+                    <input type="text" class="mt-1 w-100 border rounded-pill">
+                    <button class="mt-1 border border-3 rounded-pill p-2 w-50 btn btn-outline-success fw-semibold"
+                        type="button">
+                        Submit Payment
+                    </button>
+                </div>
+                <!-- prove after payment starts here -->
+
+            </div>
+            <!-- modal body ends here -->
+        </div>
+    </div>
+</div>
+<!-- payment and payment verification ends here -->
