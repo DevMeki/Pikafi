@@ -1,6 +1,9 @@
+<?php 
+    //include auth.php file on all secure pages
+    include "auth/auth.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +53,7 @@
                         <!-- task details starts here -->
                         <div class="col-6 text-light fs-6 fw-semibold text-start">
                             <div id="CoinReward">
-                                <img src="images/coin.png" id=CoinInTask>
+                                <img src="assets/images/coin.png" id=CoinInTask>
                                 500
                             </div>
                             <div>
