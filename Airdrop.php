@@ -91,7 +91,7 @@
             <!-- modal box for boost and Allinace starts here -->
             <div id="Boost" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content" id="modalCont">
                         <div class="modal-header">
                             <!-- <div class="modal-title">
@@ -185,7 +185,6 @@
                             </div>
                             <!-- special Offers ends here  -->
 
-
                             <!-- price options ends here  -->
                         </div>
                     </div>
@@ -193,14 +192,18 @@
                 <!-- modal box for boost and Allinace ends here -->
             </div>
             <!-- boost ends here  -->
-
-            <!-- Alliance starts here  -->
-            <!-- <div id="Alliance" class="fw-bold text-end mt-3 text-center">
+        </div>
+        <!-- Alliance starts here  -->
+        <div id="Alliance" class="fw-bold text-end mt-3 text-center">
             <button class="border-0 rounded-pill p-1 pe-2 ps-2">
                 <i class="bi bi-rocket-takeoff-fill text-light">Alliance</i>
             </button>
-        </div> -->
-            <!-- Alliance ends here  -->
+
+            <!-- Alliance modal box starts here -->
+            <div></div>
+            <!-- Alliance modal box ends here -->
+        </div>
+        <!-- Alliance ends here  -->
     </nav>
 
 
