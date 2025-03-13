@@ -1,6 +1,9 @@
+<?php 
+    //include auth.php file on all secure pages
+    include "auth/auth.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -114,12 +117,12 @@
                             <div class="row rounded-3 mt-1 pt-1" id="priceOption">
                                 <div class="col-6 text-start">
                                     <span id="BuyAmount" class="fs-6 fw-bold">%10
-                                        <img src="images/logo.png" class="mb-1"> Boost for 1 day
+                                        <img src="assets/images/logo.png" class="mb-1"> Boost for 1 day
                                     </span>
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">100 </span>
                                     </button>
                                 </div>
@@ -128,12 +131,12 @@
                             <div class="row rounded-3 mt-1 pt-1" id="priceOption">
                                 <div class="col-6 text-start">
                                     <span id="BuyAmount" class="fs-6 fw-bold">%20
-                                        <img src="images/logo.png" class="mb-1"> Boost for 1 day
+                                        <img src="assets/images/logo.png" class="mb-1"> Boost for 1 day
                                     </span>
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">600 </span>
                                     </button>
                                 </div>
@@ -142,12 +145,12 @@
                             <div class="row rounded-3 mt-1 pt-1" id="priceOption">
                                 <div class="col-6 text-start">
                                     <span id="BuyAmount" class="fs-6 fw-bold">%30
-                                        <img src="images/logo.png" class="mb-1"> Boost for 1 day
+                                        <img src="assets/images/logo.png" class="mb-1"> Boost for 1 day
                                     </span>
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">1500 </span>
                                     </button>
                                 </div>
@@ -156,12 +159,12 @@
                             <div class="row rounded-3 mt-1 pt-1" id="priceOption">
                                 <div class="col-6 text-start">
                                     <span id="BuyAmount" class="fs-6 fw-bold">%50
-                                        <img src="images/logo.png" class="mb-1"> Boost for 1 day
+                                        <img src="assets/images/logo.png" class="mb-1"> Boost for 1 day
                                     </span>
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">5000 </span>
                                     </button>
                                 </div>
@@ -173,12 +176,12 @@
                             <div class="row rounded-3 mt-1 pt-1" id="priceOption">
                                 <div class="col-6 text-start">
                                     <span id="BuyAmount" class="fs-6 fw-bold">%100
-                                        <img src="images/logo.png" class="mb-1"> Boost for 1 day
+                                        <img src="assets/images/logo.png" class="mb-1"> Boost for 1 day
                                     </span>
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">5,900 </span>
                                     </button>
                                 </div>
@@ -306,7 +309,7 @@
                         </div>
                         <div class="col-4 text-end">
                             <button type="button" class="rounded-pill border-2 mt-2 p-1 pe-2 ps-2" id="BoostBtn">
-                                <img src="images/coin.png" class="" id="coinimg">
+                                <img src="assets/images/coin.png" class="" id="coinimg">
                                 <span id="BoostPrice" class="fs-6 fw-bold">200 </span>
                             </button>
                         </div>
@@ -318,7 +321,7 @@
                         </div>
                         <div class="col-4 text-end">
                             <button class="rounded-pill border-2 mt-2 p-1 pe-2 ps-2" id="BoostBtn">
-                                <img src="images/coin.png" class="" id="coinimg">
+                                <img src="assets/images/coin.png" class="" id="coinimg">
                                 <span id="BoostPrice" class="fs-6 fw-bold">3900 </span>
                             </button>
                         </div>

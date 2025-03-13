@@ -1,15 +1,20 @@
+<?php 
+    //include auth.php file on all secure pages
+    include "auth.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email auth Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <style>
+
         body {
             /* background-image: url(images/bg.png);
             background-size: cover; */
@@ -45,6 +50,15 @@
             padding: 10%;
         }
 
+        .formcont>input {
+            padding: 3%;
+            margin-top: 3%;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #49688D;
+            background: none;
+        }
+
         /* form ends here  */
 
         /* button starts here */
@@ -63,26 +77,12 @@
             border-radius: 24px;
         }
 
-        .btncont>a>#login {
+        /* .btncont>#login {
             width: 60%;
             margin-top: 10%;
             margin-left: 20%;
             margin-right: 20%;
-        }
-        .auth_container{
-            display: grid;
-            grid-template-columns: auto auto auto auto auto;
-
-        }
-        .auth_input{
-            width: 80%;
-            padding: 0.6rem;
-            border: 4px solid #49688D;
-            border-radius: 0.3rem;
-            font-weight: bolder;
-            font-size: larger;
-            text-align: center;
-        }
+        } */
     </style>
 </head>
 
@@ -94,7 +94,7 @@
             <div class="logocont">
                 <div></div>
                 <div>
-                    <img src="images/logo.png">
+                    <img src="assets/images/logo.png">
                 </div>
                 <div></div>
             </div>
@@ -108,39 +108,29 @@
 
             <!-- reg info starts here  -->
             <div class="formcont">
-                <p><b>Hey!, </b> <br>Enter code sent to your email below...</p>
-                <div class="auth_container mt-3">
-                    <input type="text" class="auth_input">
-                    <input type="text" class="auth_input">
-                    <input type="text" class="auth_input">
-                    <input type="text" class="auth_input">
-                    <input type="text" class="auth_input">
-                </div>
-                <div class="row mt-3">
-                    <div class="col">
-                        <h6 class="text-danger">Don't close your browser..</h6>
-                    </div>
-                </div>
+                <input type="email" id="email" placeholder="Enter Email">
+                <input type="password" id="password" placeholder="Enter Password">
             </div>
             <!-- reg info ends here  -->
+
+            <!-- button starts here -->
             <div class="btncont">
                 <p class="text-danger text-center error_text"></p>
-                <input id="register" type="submit" class="btn_submit" value="Continue"> 
-            </div>
-             <div class="row mt-3">
-                <div class="col text-center">
-                    <p>Didn't receive Email? <span class="text-warning h6">Resend mail</span> </p>
+                <input id="register" type="button" value="Login">
+                <div class="text-center mt-4">
+                    <a href="forgot.html">Forgot Password?</a>
                 </div>
-             </div>
-            <br>
+            </div>
+            <!-- button ends here -->
+
+            <div class="text-center mt-3">
+                <a href="Register.html">Don't have an account?</a>
+            </div>
         </div>
         <div class="col-md-4"></div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <script src="password_auth.js"></script>
-
+<script src="login.js"></script>
 </body>
 
 </html>

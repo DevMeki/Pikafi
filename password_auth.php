@@ -1,15 +1,17 @@
+<?php 
+    //include auth.php file on all secure pages
+    include "auth.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Page</title>
+    <title>Email auth Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         body {
             /* background-image: url(images/bg.png);
@@ -37,17 +39,13 @@
             color: #49688D;
         }
 
+        #name {
+            padding-top: 15%;
+        }
+
         /* form starts here */
         .formcont {
             padding: 10%;
-        }
-
-        .formcont>input {
-            padding: 3%;
-            width: 100%;
-            border: none;
-            border-bottom: 1px solid #49688D;
-            background: none;
         }
 
         /* form ends here  */
@@ -68,19 +66,30 @@
             border-radius: 24px;
         }
 
-        /* .btncont>a>#login {
+        .btncont>a>#login {
             width: 60%;
             margin-top: 10%;
             margin-left: 20%;
             margin-right: 20%;
-        } */
-         #CandT{
-            font-size: 14px;
-         }
+        }
+        .auth_container{
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+
+        }
+        .auth_input{
+            width: 80%;
+            padding: 0.6rem;
+            border: 4px solid #49688D;
+            border-radius: 0.3rem;
+            font-weight: bolder;
+            font-size: larger;
+            text-align: center;
+        }
     </style>
 </head>
 
-<body class="container pt-sm-2">
+<body class="container pt-md-2">
     <div class="row">
         <div class="col-0 col-md-4"></div>
         <div class="col-0 col-md-4 pt-5 pb-5" id="main">
@@ -95,49 +104,46 @@
             <!-- logo ends here -->
 
             <!-- name starts here  -->
-            <div class="text-center pt-4">
+            <div id="name" class="text-center">
                 <h1>PIKAFI</h1>
             </div>
             <!-- name ends here  -->
 
             <!-- reg info starts here  -->
             <div class="formcont">
-                <p><b>Hey!,</b> Welcome..</p>
-                <input type="email" id="email" placeholder="Enter Email">
-                <input type="text" id="username" placeholder="Enter Username">
-                <input type="password" id="password" min="8" max="20" placeholder="Enter Password">
-                <input type="password" id="confirm_password" min="8" max="20" placeholder="Confirm password">
+                <p><b>Hey!, </b> <br>Enter code sent to your email below...</p>
+                <div class="auth_container mt-3">
+                    <input type="text" class="auth_input">
+                    <input type="text" class="auth_input">
+                    <input type="text" class="auth_input">
+                    <input type="text" class="auth_input">
+                    <input type="text" class="auth_input">
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <h6 class="text-danger">Don't close your browser..</h6>
+                    </div>
+                </div>
             </div>
             <!-- reg info ends here  -->
-
-            <div class="container-fluid ms-2 me-4" id="CandT">
-                <!-- Terms and conditions starts here  -->
-                <div class="text-start">
-                    <p> <input type="checkbox"> I Have Read and Agree to PIKAFI'S <a href="TandC.html">Terms and Conditions</a><br>
-                        <input type="checkbox"> I Aknowledge that I'm not a citizen of USA or UK nor do I base in any of the countries</p>
-                </div>
-                <!-- Terms and conditions ends here  -->
-            </div>
-
-            <!-- button starts here -->
             <div class="btncont">
                 <p class="text-danger text-center error_text"></p>
-                <input id="register" type="button" value="Register">
+                <input id="register" type="submit" class="btn_submit" value="Continue"> 
             </div>
-            <!-- button ends here -->
-
-            <div class="text-center mt-3">
-                <a href="Login.html">Already have an account?</a>
-            </div>
+             <div class="row mt-3">
+                <div class="col text-center">
+                    <p>Didn't receive Email? <span class="text-warning h6">Resend mail</span> </p>
+                </div>
+             </div>
+            <br>
         </div>
         <div class="col-md-4"></div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <script src="register.js"></script>
+    <script src="password_auth.js"></script>
+
 </body>
 
 </html>
