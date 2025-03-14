@@ -107,15 +107,15 @@
             <div class="formcont">
                 <b>Hey!,</b>
                 <label for="emmail">Create a new password.</label>
-                <input type="password" placeholder="Enter New Password....">
-                <input type="password" placeholder="Confirm Password....">
-                <!-- <input type="password" placeholder="password"> -->
+                <input type="password" id="password" placeholder="Enter New Password....">
+                <input type="password" id="confirm" placeholder="Confirm Password....">
             </div>
             <!-- reg info ends here  -->
 
             <!-- button starts here -->
             <div class="btncont">
-                <a> <input id="register" type="submit" value="Submit"> </a>
+                <p class="text-center text-danger error"></p>
+                <a> <input id="resetBtn" type="submit" value="Submit"> </a>
             </div>
             <!-- button ends here -->
             <br>
@@ -126,5 +126,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+
+    <script src="set_new_password.js"></script>
 </body>
 </html>
