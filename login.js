@@ -34,7 +34,9 @@ registerBtn.addEventListener("click", function () {
                         title: 'Success',
                         text: responseData.message,
                         icon: 'success',
-                        confirmButtonText: 'OK'
+                        confirmButtonText: 'OK',
+                        allowOutsideClick: false, // Prevents closing by clicking outside
+                        allowEscapeKey: false // Prevents closing by pressing Escape
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Simulate a mouse click:
@@ -52,7 +54,9 @@ registerBtn.addEventListener("click", function () {
                     title: 'Error!',
                     text: 'An error occurred while processing your request.',
                     icon: 'error',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    allowOutsideClick: false, // Prevents closing by clicking outside
+                    allowEscapeKey: false // Prevents closing by pressing Escape
                 });
 
                 console.log(error);

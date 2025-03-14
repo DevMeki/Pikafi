@@ -40,6 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else {
                 $data = mysqli_fetch_assoc($query);
                 $username = $data["username"];
+                // Generate a 4-digit random code
+                $verificationCode = rand(10000, 99999);
 
                 //Load Composer's autoloader
                 require 'vendor/autoload.php';
@@ -55,25 +57,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                     $mail->Username   = 'picanki.tech.hub@gmail.com';                     //SMTP username
                     $mail->Password   = 'nqezeexyjakftqqp';                               //SMTP password
-                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
                     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                     //Recipients
-                    $mail->setFrom('picanki.tech.hub@gmail.com', 'Apextradenetwork');
+                    $mail->setFrom('picanki.tech.hub@gmail.com', 'Pikafi');
                     $mail->addAddress($email, $username);     //Add a recipient
                     $mail->addReplyTo('picanki.tech.hub@gmail.com', 'Pikafi Support');
                     $mail->addCC('picanki.tech.hub@gmail.com');
 
                     //Content
                     $mail->isHTML(true);                        //Set email format to HTML
-                    $mail->Subject = 'Pikafi Verification Email Code';
-                    // $mail->msgHTML(file_get_contents("verifyemailLink.php"), __DIR__);
-                    // $mail->Body    = '';
-                    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+                    $mail->Subject = 'Password Reset Request';
+                    // Pass the "code" parameter to verifyemailLink.php
+                    $emailContent = file_get_contents("http://localhost/pikafi/email/verifyemailLink.php?code=" . urlencode($verificationCode));
+                    $mail->msgHTML($emailContent, __DIR__);
+                    // $mail->Body    = 'Hello user';
+                    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                     if($mail->send()){
+                        //set the code in the session
+                        $_SESSION['verificationCode'] = $verificationCode;
+
                         // return success message
-                        $output = json_encode(array('status' => 'success', 'message' => 'Network error try again..'));
+                        $output = json_encode(array('status' => 'success', 'message' => 'Verification code has been successfully sent to your email.'));
                         die($output);
                     }else{
                         $output = json_encode(array('status' => 'info', 'message' => 'Mail failed, Network error try again..'));
