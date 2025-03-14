@@ -197,9 +197,10 @@
             <!-- boost ends here  -->
         </div>
         <!-- Alliance starts here  -->
-        <div id="Alliance" class="fw-bold text-end mt-3 text-center">
-            <button class="border-0 rounded-pill p-1 pe-2 ps-2">
-                <i class="bi bi-rocket-takeoff-fill text-light">Alliance</i>
+        <div id="Alliance" class="fw-bold text-end text-center">
+            <button class="border-0 rounded-pill p-1 pe-2 ps-2" data-bs-toggle="modal" data-bs-target="#Boost"
+            type="button">
+                <i class="bi bi-people-fill text-light"> Alliance</i>
             </button>
 
             <!-- Alliance modal box starts here -->
