@@ -22,7 +22,7 @@
         }
 
         #main {
-            background-image: url(images/reg&log\ Bg.png);
+            background-image: url(assets/images/reg&log\ Bg.png);
             background-size: cover;
         }
 
@@ -130,7 +130,7 @@
             <!-- button ends here -->
 
             <div class="text-center mt-3">
-                <a href="Login.html">Already have an account?</a>
+                <a href="Login.php">Already have an account?</a>
             </div>
         </div>
         <div class="col-md-4"></div>

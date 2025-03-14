@@ -23,7 +23,7 @@
         }
 
         #main {
-            background-image: url(images/reg&log\ Bg.png);
+            background-image: url(assets/images/reg&log\ Bg.png);
             background-size: cover;
         }
 
@@ -124,7 +124,7 @@
             <!-- button ends here -->
 
             <div class="text-center mt-3">
-                <a href="Register.html">Don't have an account?</a>
+                <a href="Register.php">Don't have an account?</a>
             </div>
         </div>
         <div class="col-md-4"></div>
