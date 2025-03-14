@@ -55,7 +55,7 @@ registerBtn.addEventListener("click", function () {
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Simulate a mouse click:
-                            window.location.href = "login.html";
+                            window.location.href = "login.php";
                         }
                     });
                 } else {

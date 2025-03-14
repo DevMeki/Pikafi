@@ -23,22 +23,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //validate users input
     if (empty($email)) {
+        //return an error message
         $output = json_encode(array('status' => 'error', 'message' => 'Email is empty'));
         die($output);
     } else {
         if (empty($username)) {
+            //return an error message
             $output = json_encode(array('status' => 'error', 'message' => 'Username is empty'));
             die($output);
         } else {
             if (empty($password)) {
+                //return an error message
                 $output = json_encode(array('status' => 'error', 'message' => 'Password is empty'));
                 die($output);
             } else {
                 if (empty($confirm_password)) {
+                    //return an error message
                     $output = json_encode(array('status' => 'error', 'message' => 'Confirm password is empty'));
                     die($output);
                 } else {
                     if ($confirm_password !== $password) {
+                        //return an error message
                         $output = json_encode(array('status' => 'error', 'message' => 'password does not match'));
                         die($output);
                     } else {
@@ -46,10 +51,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $email_DB = "SELECT * FROM users WHERE email = '$email'";
                         $email_Data = mysqli_query($conn, $email_DB);
                         if (!$email_Data) {
+                            //return an error message
                             $output = json_encode(array('status' => 'error', 'message' => 'An error occured in the server.'));
                             die($output);
                         } else {
                             if (mysqli_fetch_assoc($email_Data) > 0) {
+                                //return an info message
                                 $output = json_encode(array('status' => 'info', 'message' => 'This email has already been used.'));
                                 die($output);
                             } else {
@@ -63,14 +70,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 $query = mysqli_query($conn, $insertData);
                                 if ($query) {
                                     //login user auto
-                                    $_SESSION['username'] = $username;
-                                    $_SESSION['userToken'] = $token;
-                                    $_SESSION['auth'] = "user";
-                                    $_SESSION['userRefCode'] = $userRefCode6;
+                                    // $_SESSION['username'] = $username;
+                                    // $_SESSION['userToken'] = $token;
+                                    // $_SESSION['auth'] = "user";
+                                    // $_SESSION['userRefCode'] = $userRefCode6;
                                     //return success message
                                     $output = json_encode(array('status' => 'success', 'message' => 'Account Created Successfully..'));
                                     die($output);
                                 } else {
+                                    //return an error message
                                     $output = json_encode(array('status' => 'error', 'message' => 'failed to upload user details'));
                                     die($output);
                                 }

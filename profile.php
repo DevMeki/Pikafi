@@ -31,7 +31,7 @@ include "auth/auth.php";
     <div class="card m-1">
         <div class="card-body">
             <!-- <h5 class="card-title text-center">User Profile</h5> -->
-            <img src="images/logo.png" id="UserDp" class="mx-auto d-block w-25 h-25">
+            <img src="assets/images/logo.png" id="UserDp" class="mx-auto d-block w-25 h-25">
             <ul id="UserInfo" class="list-group list-group-flush">
                 <li id="UserName" class="list-group-item">
                     <i class="bi bi-person-circle"></i> Username:

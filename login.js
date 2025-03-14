@@ -38,7 +38,7 @@ registerBtn.addEventListener("click", function () {
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Simulate a mouse click:
-                            window.location.href = "Home.html";
+                            window.location.href = "Airdrop.php";
                         }
                     });
                 } else {
