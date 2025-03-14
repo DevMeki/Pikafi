@@ -43,7 +43,9 @@ registerBtn.addEventListener("click", function () {
                         title: 'Information',
                         text: responseData.message,
                         icon: 'info',
-                        confirmButtonText: 'OK'
+                        confirmButtonText: 'OK',
+                        allowOutsideClick: false, // Prevents closing by clicking outside
+                        allowEscapeKey: false // Prevents closing by pressing Escape
                     });
                 } else if (responseData.status === 'success') {
                     // Handle success status
@@ -51,11 +53,13 @@ registerBtn.addEventListener("click", function () {
                         title: 'Success',
                         text: responseData.message,
                         icon: 'success',
-                        confirmButtonText: 'OK'
+                        confirmButtonText: 'OK',
+                        allowOutsideClick: false, // Prevents closing by clicking outside
+                        allowEscapeKey: false // Prevents closing by pressing Escape
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Simulate a mouse click:
-                            window.location.href = "login.html";
+                            window.location.href = "login.php";
                         }
                     });
                 } else {
@@ -64,7 +68,9 @@ registerBtn.addEventListener("click", function () {
                         title: 'Status: ' + responseData.status,
                         text: responseData.message,
                         icon: 'info',
-                        confirmButtonText: 'OK'
+                        confirmButtonText: 'OK',
+                        allowOutsideClick: false, // Prevents closing by clicking outside
+                        allowEscapeKey: false // Prevents closing by pressing Escape
                     });
                 }
             },
@@ -74,7 +80,9 @@ registerBtn.addEventListener("click", function () {
                     title: 'Error!',
                     text: 'An error occurred while processing your request.',
                     icon: 'error',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    allowOutsideClick: false, // Prevents closing by clicking outside
+                    allowEscapeKey: false // Prevents closing by pressing Escape
                 });
 
                 console.log(error);

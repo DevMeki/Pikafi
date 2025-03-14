@@ -1,25 +1,25 @@
-<?php 
-    //include auth.php file on all secure pages
-    include "auth.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset account password Page</title>
+    <title>Email Status</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <style>
-        body{
+
+        body {
             /* background-image: url(images/bg.png);
             background-size: cover; */
             background-color: #151d27;
 
         }
+
         #main {
-            background-image: url(assets/images/reg&log\ Bg.png);
+            background-image: url(../../assets/images/reg&log\ Bg.png);
             background-size: cover;
         }
 
@@ -37,7 +37,7 @@
             color: #49688D;
         }
 
-        #name{
+        #name {
             padding-top: 15%;
         }
 
@@ -47,8 +47,7 @@
         }
 
         .formcont>input {
-            padding-bottom: 3%;
-            padding-top: 3%;
+            padding: 3%;
             margin-top: 3%;
             width: 100%;
             border: none;
@@ -74,12 +73,12 @@
             border-radius: 24px;
         }
 
-        .btncont>a>#login {
+        /* .btncont>#login {
             width: 60%;
             margin-top: 10%;
             margin-left: 20%;
             margin-right: 20%;
-        }
+        } */
     </style>
 </head>
 
@@ -91,7 +90,7 @@
             <div class="logocont">
                 <div></div>
                 <div>
-                    <img src="assets/images/logo.png">
+                    <img src="../../assets/images/logo.png">
                 </div>
                 <div></div>
             </div>
@@ -99,32 +98,61 @@
 
             <!-- name starts here  -->
             <div id="name" class="text-center">
-                <h1>PIKAFI</h1>
+                <h3>Oops... Verification! 😒</h3>
             </div>
             <!-- name ends here  -->
 
             <!-- reg info starts here  -->
             <div class="formcont">
-                <b>Hey!,</b>
-                <label for="emmail">Create a new password.</label>
-                <input type="password" placeholder="Enter New Password....">
-                <input type="password" placeholder="Confirm Password....">
-                <!-- <input type="password" placeholder="password"> -->
+                <?php 
+                    if(isset($_GET['status']) && $_GET['status'] == 'servererror') {
+                        echo "<div class='alert alert-warning' role='alert'>
+                            <p>
+                                <b>Hey!,</b>
+                                Dear User,<br>
+                                Your email cannot be verified at the moment. Please try again later.
+                            </p>
+                        </div>";
+                    }elseif(isset($_GET['status']) && $_GET['status'] == 'notfound') {
+                        echo "<div class='alert alert-danger' role='alert'>
+                            <p>
+                                <b>Hey!,</b>
+                                Dear User,<br>
+                                Your email cannot be verified. Invalid User.
+                            </p>
+                        </div>";
+                    }elseif(isset($_GET['status']) && $_GET['status'] == 'alreadyverified') {
+                        echo "<div class='alert alert-info' role='alert'>
+                            <p>
+                                <b>Hey!,</b>
+                                Dear User,<br>
+                                Your email is already verified.
+                            </p>
+                        </div>";
+                    }elseif(isset($_GET['status']) && $_GET['status'] == 'invalidemail') {
+                        echo "<div class='alert alert-danger' role='alert'>
+                            <p>
+                                <b>Hey!,</b>
+                                Dear User,<br>
+                                Your email is invalid.
+                            </p>
+                        </div>";
+                    }
+                
+                ?>
             </div>
             <!-- reg info ends here  -->
 
             <!-- button starts here -->
             <div class="btncont">
-                <a> <input id="register" type="submit" value="Submit"> </a>
+                <a href="../../login.php">
+                    <input type="button" value="Return to site" id="login" class="btn btn-primary">
+                </a>
             </div>
-            <!-- button ends here -->
-            <br>
-            <br>
         </div>
         <div class="col-md-4"></div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
 </body>
+
 </html>

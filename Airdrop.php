@@ -62,11 +62,11 @@ include "auth/auth.php";
     <!-- pikafi balance, mining rate and claim starts here  -->
     <div class="text-center bg-secondary text-light fw-semibold p-3 rounded-3" id="Pikaficont">
         <div class="">Pikafi Balance</div>
-        <img src="images/logo.png" class="mb-2">
+        <img src="assets/images/logo.png" class="mb-2">
         <span id="PikafiBalance" class="fs-1">20,222.34</span>
         <div>
             Mining Rate:
-            <img src="images/logo.png" class="mb-1 ms-2" id="mrimg">
+            <img src="assets/images/logo.png" class="mb-1 ms-2" id="mrimg">
             <span id="miningrate">0.50/hr</span>
         </div>
         <!-- claim starts here -->
@@ -78,7 +78,7 @@ include "auth/auth.php";
                         Claim
                     </button>
                     <div>
-                        <img src="images/logo.png" class="mb-2">
+                        <img src="assets/images/logo.png" class="mb-2">
                         <span id="UnclaimedBalance" class="fs-4 text-light">10,023.56</span>
                     </div>
                 </div>

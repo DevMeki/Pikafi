@@ -44,11 +44,13 @@ btn_submit.addEventListener("click", function () {
                         title: 'Success',
                         text: responseData.message,
                         icon: 'success',
-                        confirmButtonText: 'OK'
+                        confirmButtonText: 'Continue',
+                        allowOutsideClick: false, // Prevents closing by clicking outside
+                        allowEscapeKey: false // Prevents closing by pressing Escape
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Simulate a mouse click:
-                            window.location.href = "reset.html";
+                            window.location.href = "reset.php";
                         }
                     });
                 } else {
@@ -62,16 +64,14 @@ btn_submit.addEventListener("click", function () {
                     title: 'Error!',
                     text: 'An error occurred while processing your request.',
                     icon: 'error',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    allowOutsideClick: false, // Prevents closing by clicking outside
+                    allowEscapeKey: false // Prevents closing by pressing Escape
                 });
 
                 console.log(error);
             }
         });
-
-
-
-
 
         // Compare with the data variable
         // if(arrayAsNumber == formattedNumber){

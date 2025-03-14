@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset account password Page</title>
+    <title>Forgotten password Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -65,7 +65,7 @@
             margin-right: 17%;
         }
 
-        .btncont>a>input {
+        .btncont>input {
             background-color: #151d27;
             color: white;
             width: 100%;
@@ -106,25 +106,28 @@
             <!-- reg info starts here  -->
             <div class="formcont">
                 <b>Hey!,</b>
-                <label for="emmail">Create a new password.</label>
-                <input type="password" placeholder="Enter New Password....">
-                <input type="password" placeholder="Confirm Password....">
+                <label for="email">Forgot your password?</label>
+                <input type="email" id="email" placeholder="Enter Email">
                 <!-- <input type="password" placeholder="password"> -->
             </div>
             <!-- reg info ends here  -->
 
             <!-- button starts here -->
             <div class="btncont">
-                <a> <input id="register" type="submit" value="Submit"> </a>
+                <p class="text-danger text-center error_text"></p>
+                <input id="register" class="btn_submit" type="submit" value="Submit">
             </div>
             <!-- button ends here -->
-            <br>
-            <br>
+
+            <div class="text-center mt-4 mb-5">
+                <a href="Register.php">Don't have an account?</a>
+            </div>
         </div>
         <div class="col-md-4"></div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="forgot.js"></script>
 </body>
+
 </html>
