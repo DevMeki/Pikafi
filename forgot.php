@@ -1,3 +1,7 @@
+<?php 
+    //include auth.php file on all secure pages
+    include "auth.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +83,7 @@
     </style>
 </head>
 
-<body class="container pt-md-2">
+<body class="container pt-md-0">
     <div class="row">
         <div class="col-0 col-md-4"></div>
         <div class="col-0 col-md-4 pt-5 pb-5" id="main">
@@ -87,7 +91,7 @@
             <div class="logocont">
                 <div></div>
                 <div>
-                    <img src="images/logo.png">
+                    <img src="assets/images/logo.png">
                 </div>
                 <div></div>
             </div>

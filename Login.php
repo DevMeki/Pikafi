@@ -118,7 +118,7 @@
                 <p class="text-danger text-center error_text"></p>
                 <input id="register" type="button" value="Login">
                 <div class="text-center mt-4">
-                    <a href="forgot.html">Forgot Password?</a>
+                    <a href="forgot.php">Forgot Password?</a>
                 </div>
             </div>
             <!-- button ends here -->
