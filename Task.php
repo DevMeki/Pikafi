@@ -96,7 +96,7 @@
                         <!-- task details starts here -->
                         <div class="col-6 text-light fs-6 fw-semibold text-start">
                             <div id="CoinReward">
-                                <img src="images/coin.png" id=CoinInTask>
+                                <img src="assets/images/coin.png" id=CoinInTask>
                                 500
                             </div>
                             <div>
