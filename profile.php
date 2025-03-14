@@ -1,9 +1,10 @@
-<?php 
-    //include auth.php file on all secure pages
-    include "auth/auth.php";
+<?php
+//include auth.php file on all secure pages
+include "auth/auth.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +14,13 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <style>
-    body {
-        background-color: #E5EFEE;
-    }
+        body {
+            background-color: #E5EFEE;
+        }
 
-    #listItem {
-        background-color: #5382AD;
-    }
+        #listItem {
+            background-color: #5382AD;
+        }
     </style>
 </head>
 
@@ -47,6 +48,16 @@
                         <i class="bi bi-gear-fill"></i> Account Setting
                     </button>
                 </li>
+                <li class="list-group-item" id="Logout">
+                    <button class="border-0 bg-white w-100 text-start" type="button">
+                        <i class="bi bi-box-arrow-left"></i> Logout
+                    </button>
+                </li>
+                <li class="list-group-item" id="Logout">
+                    <button class="border-0 bg-white w-100 text-start" type="button">
+                        <i class="bi bi-person-dash"></i> Delete Account
+                    </button>
+                </li>
                 <!-- <li class="list-group-item"></li>
                 <li class="list-group-item"></li> -->
             </ul>
@@ -68,7 +79,7 @@
                 <div class="modal-body bg-light">
                     <ul class="list-group list-group-flush text-start fw-semibold">
                         <li class="list-group-item border rounded-2" id="listItem">
-                        <p class="text-light">Add Your Wallet Address</p>
+                            <p class="text-light">Add Your Wallet Address</p>
                             Enter your BEP20 address from a non-custodial wallet such as Metamask, Trust Wallet, or
                             similar.
                             <input type="text" placeholder="BEP20 or EVM address"
