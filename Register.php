@@ -116,8 +116,8 @@
             <div class="container-fluid ms-2 me-4" id="CandT">
                 <!-- Terms and conditions starts here  -->
                 <div class="text-start">
-                    <p> <input type="checkbox"> I Have Read and Agree to PIKAFI'S <a href="TandC.html">Terms and Conditions</a><br>
-                        <input type="checkbox"> I Aknowledge that I'm not a citizen of USA or UK nor do I base in any of the countries</p>
+                    <p> <input type="checkbox" id="TC"> I Have Read and Agree to PIKAFI'S <a href="TandC.html">Terms and Conditions</a><br>
+                        <input type="checkbox" id="TC_country"> I Aknowledge that I'm not a citizen of USA or UK nor do I base in any of the countries</p>
                 </div>
                 <!-- Terms and conditions ends here  -->
             </div>

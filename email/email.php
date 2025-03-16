@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <style>
-
         body {
             /* background-image: url(images/bg.png);
             background-size: cover; */
@@ -19,7 +19,7 @@
         }
 
         #main {
-            background-image: url(assets/images/reg&log\ Bg.png);
+            background-image: url("https://i.ibb.co/B5tpZBpx/reg-log-Bg.png");
             background-size: cover;
         }
 
@@ -89,8 +89,8 @@
             <!-- logo image strts here  -->
             <div class="logocont">
                 <div></div>
-                <div>
-                    <img src="assets/images/logo.png">
+                <div style="text-align: center;">
+                    <img src="https://i.ibb.co/bZhKYNq/logo.png" alt="logo" border="0">
                 </div>
                 <div></div>
             </div>
@@ -106,7 +106,7 @@
             <div class="formcont">
                 <p>
                     <b>Hey!,</b>
-                    Dear [User's Name],<br> <br>
+                    Dear,<br> <br>
                     Thank you for creating an account with <b>PIKAFI</b>! To complete your registration and unlock access to exciting airdrop opportunities,
                     please verify your email address by clicking the button below:
                 </p>
@@ -120,17 +120,23 @@
                 </p>
             </div>
             <!-- reg info ends here  -->
-
-            <!-- button starts here -->
-            <div class="btncont">
-                <a href="/auth/verify/mail_verify.php?email=pinkme@gmail.com">
-                    <input type="button" value="Verify Email" id="verify" class="btn btn-primary">
-                </a>
-            </div>
+            <?php
+                if (isset($_GET['token']) && $_GET['token'] !== '') {
+                    $token = $_GET['token'];
+            ?>
+                    <!-- button starts here -->
+                    <div class="btncont">
+                        <a href="/auth/verify/mail_verify.php?token=<?php echo $token; ?>">
+                            <input type="button" value="Verify Email" id="verify" class="btn btn-primary">
+                        </a>
+                    </div>
+            <?php
+                }
+            ?>
 
             <div class="formcont">
                 <p>
-                    <strong>Need help?</strong>  Visit our [Help Center] or reply to this email, and we’ll be happy to assist you.
+                    <strong>Need help?</strong> Visit our [Help Center] or reply to this email, and we’ll be happy to assist you.
                     <br>
                     Welcome to <strong>PIKAFI</strong> we’re excited to have you on board!
                 </p>

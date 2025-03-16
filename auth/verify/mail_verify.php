@@ -3,19 +3,18 @@
     include "../../databaseConnection.php";
 
     //get users email from link parameter
-    $email = $_GET["email"];
+    // $token = $_GET["token"];
 
     // Check if the parameter exists in the URL and if it's not empty
-    if (isset($_GET['email']) && !empty($_GET['email'])) {
+    if (isset($_GET['token']) && !empty($_GET['token'])) {
         // The parameter is not empty
-        $parameterValue = $_GET['email'];
-        $specialchars_email = htmlspecialchars($parameterValue);
+        $parameterValue = $_GET['token'];
 
         // Check if the parameter is a valid email
-        if (filter_var($specialchars_email, FILTER_VALIDATE_EMAIL)) {
+        if (filter_var($parameterValue, FILTER_VALIDATE_EMAIL)) {
             // The parameter is a valid email
             // Check if the email exists in the database
-            $fetchUser = "SELECT * FROM `users` WHERE email = '$specialchars_email'";
+            $fetchUser = "SELECT * FROM `users` WHERE userToken = '$parameterValue'";
             $query = mysqli_query($conn, $fetchUser);
             if (!$query) {
                 //redirect to email status page
@@ -34,7 +33,7 @@
                         //generate 10 random characters
                         $verifyKey = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 10);
                         //update the user verifyKey to an empty string
-                        $updateUser = "UPDATE `users` SET verifyKey = '$verifyKey' WHERE email = '$specialchars_email'";
+                        $updateUser = "UPDATE `users` SET verifyKey = '$verifyKey' WHERE userToken = '$parameterValue'";
                         $query = mysqli_query($conn, $updateUser);
                         if (!$query) {
                             //redirect to email status page

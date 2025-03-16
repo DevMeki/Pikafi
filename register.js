@@ -21,6 +21,10 @@ registerBtn.addEventListener("click", function () {
         error_text.innerHTML = "Password is weak (must be 8 characters and above)";
     } else if (!isNaN(password)) {
         error_text.innerHTML = "Password must contain alphanumeric characters";
+    }  else if (document.getElementById("TC").checked == false) {
+        error_text.innerHTML = "Please agree to PIKAFI Terms and Conditions";
+    } else if (document.getElementById("TC_country").checked == false) {
+        error_text.innerHTML = "Please Aknowledge that you are not a citizen of the USA or UK";
     } else {
         // confirm_password
         error_text.innerHTML = "";
