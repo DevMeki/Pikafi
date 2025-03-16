@@ -13,7 +13,8 @@
             background-color: #E5EFEE;
         }
 
-        #header {
+        #header,
+        #Sticky_Cont {
             background-color: #5382AD;
         }
 
@@ -34,9 +35,15 @@
             text-decoration: none;
         }
 
-        li:hover {
+        #pillNav2>li:hover {
             background-color: white;
-            border-radius: 25px;
+            border-radius: 15px;
+        }
+
+        #Sticky_nav>ul>li:hover {
+            background-color: white;
+            border-radius: 10px;
+            color: #5382AD;
         }
 
         #vestfi {
@@ -54,7 +61,7 @@
 </head>
 
 <body>
-    <div id="header" class="container mt-md-2 text-light">
+    <div id="header" class="me-2 ms-2 text-light">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
 
@@ -78,29 +85,24 @@
                 <!-- button ends here  -->
 
                 <div class="collapse navbar-collapse d-md-flex justify-content-end" id="navbarNavDropdown">
-                    <ul class="pb-2 pt-1 nav nav-pills nav-fill gap-2 p-1 rounded-5 shadow-sm" id="pillNav2"
-                        role="tablist"
+                    <ul class="pb-2 pt-1 nav nav-pills nav-fill gap-2 p-1" id="pillNav2" role="tablist"
                         style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
                         <!-- Li starts here -->
                         <li class="nav-item">
-                            <a href=""><button class="nav-link active rounded-5" id="home-tab" data-bs-toggle="tab"
+                            <a href=""><button class="nav-link active rounded-4" id="home-tab" data-bs-toggle="tab"
                                     type="button" aria-selected="true">Home</button></a>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rounded-5" id="presale-tab" data-bs-toggle="tab" type="button"
+                            <button class="nav-link rounded-4" id="presale-tab" data-bs-toggle="tab" type="button"
                                 aria-selected="false">Presale</button>
                         </li>
                         <li class="nav-item">
-                            <a href="Airdrop.php"><button class="nav-link rounded-5" id="Airdrop-tab"
+                            <a href="Airdrop.php"><button class="nav-link rounded-4" id="Airdrop-tab"
                                     data-bs-toggle="tab" type="button" aria-selected="false">Airdrop</button></a>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link rounded-5" id="social-tab" data-bs-toggle="tab" type="button"
-                                aria-selected="false">Socials</button>
-                        </li>
-                        <li class="nav-item">
-                            <a href="Login.php"><button class="nav-link rounded-5" id="profile-tab" data-bs-toggle="tab"
-                                    type="button" aria-selected="false">Profile </button></a>
+                            <a href="profile.php"><button class="nav-link rounded-4" id="profile-tab"
+                                    data-bs-toggle="tab" type="button" aria-selected="false">Profile </button></a>
                         </li>
                     </ul>
                 </div>
@@ -109,15 +111,36 @@
     </div>
     <!-- nav ends here  -->
 
-    <!-- sticky nav starts here  -->
-    <div class=""></div>
-    <!-- sticky nav ends here  -->
+    <!-- scrollby and sticky top starts here -->
+    <div class="d-flex justify-content-center sticky-top me-2 ms-2 mt-1" id="Sticky_Cont">
+        <nav id="Sticky_nav" class="p-2">
+            <ul class="nav nav-pills nav-fill gap-2">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">First</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">First</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">First</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">First</a>
+                </li>
+        </nav>
+    </div>
+
+    <!-- scrollby buttons ends here  -->
 
     <!-- main starts here  -->
-    <div class="row m-3 m-md-5">
-        <div class="col ms-md-5">
+    <div class="row m-3 m-md-5 p-3 rounded-2" data-bs-spy="scroll" data-bs-target="#Sticky_nav"
+        data-bs-smooth-scroll="true" tabindex="0">
+        <div class="col ms-md-5" id="home">
             <p class="h5 mb-2 ms-md-5">Designed to drive financial growth and enable seamless transactions.</p>
-            <p id="vestfi" class="ms-md-5"> PIKA FINANCE (PIKAFI) NATIVE TOKEN</p>
+            <p id="vestfi" class="ms-md-5"> PIKAFI (PKF) NATIVE TOKEN</p>
             <p class="h5 mb-2 ms-md-5"> Built for versatility and Trust. The future of digital currency.</p>
 
         </div>
