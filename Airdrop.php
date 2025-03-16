@@ -244,19 +244,19 @@ include "auth/auth.php";
 
                                 <!-- container for member, level and boost percent starts here -->
                                 <ul class="list-group mb-1">
-                                    <li class="list-group-item">
+                                    <li class="list-group-item bg-secondary text-light">
                                         <div class="row">
                                             <div class="col-6 text-start">level:</div>
                                             <div class="col-6 text-end" id="Club_level">1</div>
                                         </div>
                                     </li>
-                                    <li class="list-group-item">
+                                    <li class="list-group-item bg-secondary text-light">
                                         <div class="row">
                                             <div class="col-6 text-start">Members:</div>
                                             <div class="col-6 text-end">3</div>
                                         </div>
                                     </li>
-                                    <li class="list-group-item">
+                                    <li class="list-group-item bg-secondary text-light">
                                         <div class="row">
                                             <div class="col-6 text-start">Mining Boost:</div>
                                             <div class="col-6 text-end" id="Club_mining_boost">50%</div>
@@ -275,17 +275,17 @@ include "auth/auth.php";
                                     </div>
                                     <div class="col-3">
                                         <img src="assets/images/coin.png" class="mb-1" id="coinimg">
-                                        <span id="Target_Amount" class="fs-6 fw-bold">5,900 </span>
+                                        <span id="Target_Amount" class="fs-6 fw-bold text-light">5,900 </span>
                                     </div>
                                 </div>
 
                                 <!-- button for donate to club starts here -->
                                 <div class="row">
                                     <div class="col-6">
-                                        <input type="number" placeholder="Amount" class="w-100 p-2 border-0 rounded-3">
+                                        <input type="number" placeholder="Min: 1000" class="w-100 p-2 border-0 rounded-3">
                                     </div>
                                     <div class="col-6">
-                                        <button class="fw-bold p-2 border-0 rounded-3 ps-4 pe-4 bg-info w-100">
+                                        <button class="fw-bold p-2 border-1 rounded-3 ps-4 pe-4 bg-info w-100">
                                             <i class="bi bi-rocket-takeoff-fill text-success fw-bold"></i> Boost Club
                                         </button>
                                     </div>
@@ -422,12 +422,24 @@ include "auth/auth.php";
                 <div class="modal-body bg-light text-light">
                     <div class="row border-0 rounded-2 p-2 fw-bold mt-2" id="billCont">
                         <div class="col-8">
-                            Renew Your Bills
+                            Set up automatic bill renewal for the next 6 hours.
                         </div>
                         <div class="col-4 text-end">
                             <button type="button" class="rounded-pill border-2 mt-2 p-1 pe-2 ps-2" id="BoostBtn">
                                 <img src="assets/images/coin.png" class="" id="coinimg">
                                 <span id="BoostPrice" class="fs-6 fw-bold">200 </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row border-0 rounded-2 p-2 fw-bold mt-2" id="billCont">
+                        <div class="col-8">
+                            Set up automatic bill renewal for the next 12 hours.
+                        </div>
+                        <div class="col-4 text-end">
+                            <button type="button" class="rounded-pill border-2 mt-2 p-1 pe-2 ps-2" id="BoostBtn">
+                                <img src="assets/images/coin.png" class="" id="coinimg">
+                                <span id="BoostPrice" class="fs-6 fw-bold">2160 </span>
                             </button>
                         </div>
                     </div>
