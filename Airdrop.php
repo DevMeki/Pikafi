@@ -13,8 +13,9 @@ include "auth/auth.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        body {
-            background-color: #E5EFEE;
+        body,
+        #Boost_modal_body{
+            background-color: #edfff8;
         }
 
         #mrimg {
@@ -24,16 +25,35 @@ include "auth/auth.php";
 
         #miner,
         #PayBills,
-        #CalimBtn {
-            background-color: #41c1b2;
+        #Boost_club_btn {
+            background-color: #5382AD;
         }
 
+        
+        #CalimBtn{
+            background-color: #00d47e;
+        }
+        #CalimBtn:hover{
+            background-color: #edfff8;
+        }
+
+        #Pikaficont,
+        #main_miner_cont{
+            background-color: #aff9c7;
+        }
         #upgrade,
-        #PayBills {
+        #PayBills{
             border: none;
             padding: 10px;
             padding-left: 20px;
             padding-right: 20px;
+            background-color: #edfff8;
+        }
+
+        
+        #upgrade:hover,
+        #PayBills:hover{
+            background-color: #fff0b5;
         }
 
         #BillTimer {
@@ -41,7 +61,7 @@ include "auth/auth.php";
         }
 
         #boostCont>button,
-        #Alliance>button,
+        #Club>button,
         #claim,
         #billCont {
             background-color: #5382AD;
@@ -50,6 +70,18 @@ include "auth/auth.php";
         #Club_dp {
             width: 50px;
             height: 50px;
+        }
+
+        #Club_info,
+        #Club_Board{
+            background-color: #024751;
+        }
+        #Club_info>ul>li{
+            background-color: #5382AD;
+        }
+
+        #rocket_icon{
+            color: #fff0b5;
         }
     </style>
 </head>
@@ -60,7 +92,7 @@ include "auth/auth.php";
 
 
     <!-- pikafi balance, mining rate and claim starts here  -->
-    <div class="text-center bg-secondary text-light fw-semibold p-3 rounded-3" id="Pikaficont">
+    <div class="text-center text-dark fw-semibold p-3 rounded-3" id="Pikaficont">
         <div class="">Pikafi Balance</div>
         <img src="assets/images/logo.png" class="mb-2">
         <span id="PikafiBalance" class="fs-1">20,222.34</span>
@@ -113,7 +145,7 @@ include "auth/auth.php";
 
                         <!-- modal body starts here  -->
 
-                        <div class="modal-body bg-light">
+                        <div class="modal-body" id="Boost_modal_body">
                             <p class="text-start">
                             </p>
                             <!-- price options starts here -->
@@ -200,14 +232,14 @@ include "auth/auth.php";
             <!-- boost ends here  -->
         </div>
         <!-- Club starts here  -->
-        <div id="Alliance" class="fw-bold text-end text-center">
-            <button class="border-0 rounded-pill p-1 pe-3 ps-3" data-bs-toggle="modal" data-bs-target="#Alliance_modal"
+        <div id="Club" class="fw-bold text-end text-center">
+            <button class="border-0 rounded-pill p-1 pe-3 ps-3" data-bs-toggle="modal" data-bs-target="#Club_modal"
                 type="button">
                 <i class="bi bi-people-fill text-light"> Club</i>
             </button>
 
             <!-- modal box for Club starts here -->
-            <div id="Alliance_modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            <div id="Club_modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable">
                     <div class="modal-content" id="modalCont">
@@ -221,12 +253,12 @@ include "auth/auth.php";
                         <!-- modal body starts here  -->
 
                         <div class="modal-body bg-light">
-                            <div id="Club_info" class="bg-secondary border-0 rounded-3 p-2 pt-3">
+                            <div id="Club_info" class="border-0 rounded-3 p-2 pt-3">
                                 <!-- Club logo, name and group link container starts here -->
                                 <div class="row mb-1">
                                     <!-- Club dp container -->
                                     <div class="col-2">
-                                        <img src="images/logo.png" id="Club_dp" class="">
+                                        <img src="assets/images/logo.png" id="Club_dp" class="">
                                     </div>
                                     <!-- Club name containe -->
                                     <div class="col-7 text-light text-start" id="Alliance_name">
@@ -244,19 +276,19 @@ include "auth/auth.php";
 
                                 <!-- container for member, level and boost percent starts here -->
                                 <ul class="list-group mb-1">
-                                    <li class="list-group-item bg-secondary text-light">
+                                    <li class="list-group-item text-light">
                                         <div class="row">
                                             <div class="col-6 text-start">level:</div>
                                             <div class="col-6 text-end" id="Club_level">1</div>
                                         </div>
                                     </li>
-                                    <li class="list-group-item bg-secondary text-light">
+                                    <li class="list-group-item text-light">
                                         <div class="row">
                                             <div class="col-6 text-start">Members:</div>
                                             <div class="col-6 text-end">3</div>
                                         </div>
                                     </li>
-                                    <li class="list-group-item bg-secondary text-light">
+                                    <li class="list-group-item text-light">
                                         <div class="row">
                                             <div class="col-6 text-start">Mining Boost:</div>
                                             <div class="col-6 text-end" id="Club_mining_boost">50%</div>
@@ -285,8 +317,8 @@ include "auth/auth.php";
                                         <input type="number" placeholder="Min: 1000" class="w-100 p-2 border-0 rounded-3">
                                     </div>
                                     <div class="col-6">
-                                        <button class="fw-bold p-2 border-1 rounded-3 ps-4 pe-4 bg-info w-100">
-                                            <i class="bi bi-rocket-takeoff-fill text-success fw-bold"></i> Boost Club
+                                        <button class="fw-bold p-2 border-1 rounded-3 ps-4 pe-4 w-100" id="Boost_club_btn">
+                                            <i class="bi bi-rocket-takeoff-fill fw-bold" id="rocket_icon"></i> Boost Club
                                         </button>
                                     </div>
                                 </div>
@@ -294,8 +326,8 @@ include "auth/auth.php";
                             </div>
 
                             <!-- cont for club leaderboard starts here -->
-                            <div class="bg-secondary border-0 rounded-3 p-2 pt-3 mt-4">
-                                <table class="table table-secondary table-hover">
+                            <div class="border-0 rounded-3 p-2 pt-3 mt-4" id="Club_Board">
+                                <table class="table table-hover">
                                     <thead>
                                         <tr>
                                             <th scope="col" class="">#</th>
@@ -328,11 +360,11 @@ include "auth/auth.php";
 
 
     <!-- active miners starts here -->
-    <div class="bg-secondary p-1 rounded-3 fw-bold">
+    <div class=" p-1 rounded-3 fw-bold" id="main_miner_cont">
         <!-- utility starts here  -->
-        <div class="text-center text-light mb-3">
+        <div class="text-center mb-3">
             Update Your Tax and Utility Bills
-            <button id="PayBills" class="rounded-pill text-light fw-bold border-0" data-bs-toggle="modal" data-bs-target="#BillsModalbox"
+            <button id="PayBills" class="rounded-pill text-dark fw-bold border-0" data-bs-toggle="modal" data-bs-target="#BillsModalbox"
                 type="button">Here</button>
 
             <!-- this timer below counts the amount of time left for the tax and utility bills.
@@ -340,7 +372,7 @@ include "auth/auth.php";
             <div id="BillTimer"> 00:D 00:HR 00:SEC </div>
         </div>
         <!-- utility ends here  -->
-        <div class="row">
+        <div class="row text-light">
             <div class="col-md-6">
                 <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-2 mt-md-0">
                     <div class="col">

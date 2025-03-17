@@ -15,11 +15,18 @@
         body {
             background-color: #E5EFEE;
         }
+        #Main_cont{
+            background-color: #edfff8;
+        }
         #FriendCont{
             background-color:  #5382AD;
         }
         #CLaimInviteBtn{
-            background-color: #41c1b2;
+            background-color: #00d47e;
+        }
+
+        #CLaimInviteBtn:hover{
+            background-color: #fff0b5;
         }
     </style>
 </head>
@@ -32,12 +39,12 @@
     <div class="container-fluid fw-bold fs-4 text-center mt-2">
             Bring your friends on board and receive 10% of their mining earnings.
 
-        <div class="border-0 p-1 rounded bg-light mt-3">
+        <div class="border-0 p-1 rounded mt-3" id="Main_cont">
 
             <!-- copy invite link starts her -->
             <div>
                 <p id="InviteLink" class="fw-semibold">Link text here</p>
-                <button class="mt-1 border border-3 rounded-pill p-2 w-50 btn btn-outline-success fw-semibold" type="button">Copy Link</button>
+                <button class="mx-auto d-block m-3 border-2 rounded-pill pe-5 ps-5 p-2 btn btn-outline-success fw-semibold" type="button">Copy Link</button>
             </div>
             <!-- copy invite link ends here  -->
 
@@ -45,7 +52,7 @@
              <hr>
              <div class="mt-3 mb-3">
                 <button class="border-0 rounded-pill pe-4 ps-4 p-2 fw-semibold fs-6" id="CLaimInviteBtn">Claim</button>
-                <img src="images/logo.png" class="mb-2">
+                <img src="assets/images/logo.png" class="mb-2">
                 <span id="UnclaimedBalance" class="fs-4 text-dark">5345.56</span>
              </div>
              <hr>

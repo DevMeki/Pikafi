@@ -18,6 +18,12 @@ include "auth/auth.php";
             background-color: #E5EFEE;
         }
 
+        #Main_profile_cont,
+        .list-group-item,
+        .list-group-item>button{
+            background-color: #edfff8;
+        }
+
         #listItem {
             background-color: #5382AD;
         }
@@ -28,7 +34,7 @@ include "auth/auth.php";
 
     <?php include "header.html"; ?>
 
-    <div class="card m-1">
+    <div class="card m-1" id="Main_profile_cont">
         <div class="card-body">
             <!-- <h5 class="card-title text-center">User Profile</h5> -->
             <img src="assets/images/logo.png" id="UserDp" class="mx-auto d-block w-25 h-25">
@@ -43,18 +49,18 @@ include "auth/auth.php";
                     <i class="bi bi-wallet2"></i> Wallet:
                 </li>
                 <li class="list-group-item">
-                    <button class="border-0 bg-white w-100 text-start" data-bs-toggle="modal"
+                    <button class="border-0 w-100 text-start" data-bs-toggle="modal"
                         data-bs-target="#AccountSetting" type="button">
                         <i class="bi bi-gear-fill"></i> Account Setting
                     </button>
                 </li>
                 <li class="list-group-item" id="Logout">
-                    <button class="border-0 bg-white w-100 text-start" type="button">
+                    <button class="border-0 w-100 text-start" type="button">
                         <i class="bi bi-box-arrow-left"></i> Logout
                     </button>
                 </li>
-                <li class="list-group-item" id="Logout">
-                    <button class="border-0 bg-white w-100 text-start" type="button">
+                <li class="list-group-item" id="Delete_Account">
+                    <button class="border-0 w-100 text-start" type="button">
                         <i class="bi bi-person-dash"></i> Delete Account
                     </button>
                 </li>
