@@ -360,7 +360,7 @@ include "auth/auth.php";
 
 
     <!-- active miners starts here -->
-    <div class=" p-1 rounded-3 fw-bold" id="main_miner_cont">
+    <div class=" p-1 rounded-3 fw-bold mb-5" id="main_miner_cont">
         <!-- utility starts here  -->
         <div class="text-center mb-3">
             Update Your Tax and Utility Bills
@@ -372,7 +372,7 @@ include "auth/auth.php";
             <div id="BillTimer"> 00:D 00:HR 00:SEC </div>
         </div>
         <!-- utility ends here  -->
-        <div class="row text-light">
+        <div class="row text-light mb-2">
             <div class="col-md-6">
                 <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-2 mt-md-0">
                     <div class="col">
@@ -435,6 +435,103 @@ include "auth/auth.php";
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-6">
+                <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-md-0">
+                    <div class="col">
+                        <div id="minertype">Crypto</div>
+                        <div id="minerUpgradePrice" class="fw-semibold">500</div>
+                    </div>
+                    <div class="col">
+                        <div id="minerRate">0.023/hr</div>
+                        <div id="minerLevel" class="fw-semibold">level 0</div>
+                    </div>
+                    <div class="col mt-1 mb-1">
+                        <button class="rounded-pill" id="upgrade">Activate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-md-0">
+                    <div class="col">
+                        <div id="minertype">Crypto</div>
+                        <div id="minerUpgradePrice" class="fw-semibold">500</div>
+                    </div>
+                    <div class="col">
+                        <div id="minerRate">0.023/hr</div>
+                        <div id="minerLevel" class="fw-semibold">level 0</div>
+                    </div>
+                    <div class="col mt-1 mb-1">
+                        <button class="rounded-pill" id="upgrade">Activate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-md-0">
+                    <div class="col">
+                        <div id="minertype">Crypto</div>
+                        <div id="minerUpgradePrice" class="fw-semibold">500</div>
+                    </div>
+                    <div class="col">
+                        <div id="minerRate">0.023/hr</div>
+                        <div id="minerLevel" class="fw-semibold">level 0</div>
+                    </div>
+                    <div class="col mt-1 mb-1">
+                        <button class="rounded-pill" id="upgrade">Activate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-md-0">
+                    <div class="col">
+                        <div id="minertype">Crypto</div>
+                        <div id="minerUpgradePrice" class="fw-semibold">500</div>
+                    </div>
+                    <div class="col">
+                        <div id="minerRate">0.023/hr</div>
+                        <div id="minerLevel" class="fw-semibold">level 0</div>
+                    </div>
+                    <div class="col mt-1 mb-1">
+                        <button class="rounded-pill" id="upgrade">Activate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-md-0">
+                    <div class="col">
+                        <div id="minertype">Crypto</div>
+                        <div id="minerUpgradePrice" class="fw-semibold">500</div>
+                    </div>
+                    <div class="col">
+                        <div id="minerRate">0.023/hr</div>
+                        <div id="minerLevel" class="fw-semibold">level 0</div>
+                    </div>
+                    <div class="col mt-1 mb-1">
+                        <button class="rounded-pill" id="upgrade">Activate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-md-0">
+                    <div class="col">
+                        <div id="minertype">Crypto</div>
+                        <div id="minerUpgradePrice" class="fw-semibold">500</div>
+                    </div>
+                    <div class="col">
+                        <div id="minerRate">0.023/hr</div>
+                        <div id="minerLevel" class="fw-semibold">level 0</div>
+                    </div>
+                    <div class="col mt-1 mb-1">
+                        <button class="rounded-pill" id="upgrade">Activate</button>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
     <!-- active miners ends here -->
@@ -495,6 +592,7 @@ include "auth/auth.php";
     <!-- modal box for tax and utility bills ends here   -->
 
     <!-- footer starts here -->
+     
 
     <!-- footer ends here -->
 
