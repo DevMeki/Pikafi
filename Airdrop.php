@@ -74,7 +74,7 @@ include "auth/auth.php";
 
         #Club_info,
         #Club_Board{
-            background-color: #024751;
+            background-color: #0d2d52;
         }
         #Club_info>ul>li{
             background-color: #5382AD;
