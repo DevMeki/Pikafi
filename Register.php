@@ -83,7 +83,7 @@
     </style>
 </head>
 
-<body class="container pt-sm-2">
+<body class="container pt-sm-0">
     <div class="row">
         <div class="col-0 col-md-4"></div>
         <div class="col-0 col-md-4 pt-5 pb-5" id="main">
