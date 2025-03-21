@@ -3,7 +3,7 @@
 session_start();
 
 //connect to database
-// include "databaseConnection.php";
+include "databaseConnection.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //exit script outputting json data
