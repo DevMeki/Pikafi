@@ -29,6 +29,23 @@
     body {
         background-color: #E5EFEE;
     }
+    #Task_cont{
+       background-color:  #aff9c7;
+    }
+
+    #Task_start_btn,
+    #Task_claim_btn{
+        background-color: #edfff8;
+        color: #102830;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    #Task_start_btn:hover,
+    #Task_claim_btn:hover{
+        background-color:  #fff0b5;
+        color: #102830;
+    }
     </style>
 </head>
 
@@ -37,7 +54,7 @@
     <?php include "header.html"; ?>
     <!-- task nav starts here -->
     <div class="container-fluid">
-        <div class="border-0 p-1 rounded text-center fw-bold fs-4 bg-light">
+        <div class="border-0 p-1 rounded text-center fw-bold fs-4" id="Task_cont">
             <p>Get Coins by completing simple tasks</p>
 
             <div class="row">
@@ -64,15 +81,15 @@
 
                         <!-- start and claim task button starts here  -->
                         <div class="col-4 mt-1">
-                            <div class="row me-2">
+                            <div class="row me-1">
                                 <div class="col-6">
-                                    <button class="border-1 rounded-pill btn btn-outline-light fw-bold">
+                                    <button class="border-0 rounded-pill btn" id="Task_start_btn">
                                         Start
                                     </button>
                                 </div>
 
                                 <div class="col-6">
-                                    <button class="border-1 rounded-pill btn btn-outline-light fw-bold">
+                                    <button class="border-0 rounded-pill btn" id="Task_claim_btn">
                                         Claim
                                     </button>
                                 </div>
@@ -107,15 +124,15 @@
 
                         <!-- start and claim task button starts here  -->
                         <div class="col-4 mt-1">
-                            <div class="row me-2">
+                            <div class="row me-1">
                                 <div class="col-6">
-                                    <button class="border-1 rounded-pill btn btn-outline-light fw-bold">
+                                    <button class="border-0 rounded-pill btn" id="Task_start_btn">
                                         Start
                                     </button>
                                 </div>
 
                                 <div class="col-6">
-                                    <button class="border-1 rounded-pill btn btn-outline-light fw-bold">
+                                    <button class="border-0 rounded-pill btn " id="Task_claim_btn">
                                         Claim
                                     </button>
                                 </div>
