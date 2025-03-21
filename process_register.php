@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 $user_refCode = substr(preg_replace('/\W/', "", base64_encode(bin2hex(random_bytes(32)))), 0, 15);
                                 $userRefCode6 = substr($user_refCode, 0, 6);
                                 $regDate = date("Y-m-d h:i:sa");
-                                $insertData = "INSERT INTO users (email, username, password, userToken, balance, refCode, verifyKey, dateTime, auth) VALUES ('$email', '$username', '$passwordHash', '$token', '0', '$userRefCode6', '', '$regDate', 'user')";
+                                $insertData = "INSERT INTO users (email, username, password, userToken, balance, ingamecoin, coinPH, refCode, verifyKey, dateTime, auth) VALUES ('$email', '$username', '$passwordHash', '$token', '0', '2000', '0.0', '$userRefCode6', '', '$regDate', 'user')";
                                 $query = mysqli_query($conn, $insertData);
                                 if ($query) {
 
