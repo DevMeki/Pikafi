@@ -33,7 +33,8 @@ include "auth/auth.php";
         #CalimBtn{
             background-color: #00d47e;
         }
-        #CalimBtn:hover{
+        #CalimBtn:hover,
+        #Modal_body{
             background-color: #edfff8;
         }
 
@@ -63,7 +64,8 @@ include "auth/auth.php";
         #boostCont>button,
         #Club>button,
         #claim,
-        #billCont {
+        #billCont,
+        #New_club_btn {
             background-color: #5382AD;
         }
 
@@ -73,16 +75,18 @@ include "auth/auth.php";
         }
 
         #Club_info,
-        #Club_Board{
+        #Club_Board,
+        #Club_info>ul>li{
             background-color: #0d2d52;
         }
-        #Club_info>ul>li{
-            background-color: #5382AD;
-        }
-
         #rocket_icon{
             color: #fff0b5;
         }
+
+        #New_club_btn:hover{
+            background-color:  #fff0b5;
+        }
+       
     </style>
 </head>
 
@@ -238,122 +242,9 @@ include "auth/auth.php";
                 <i class="bi bi-people-fill text-light"> Club</i>
             </button>
 
-            <!-- modal box for Club starts here -->
-            <div id="Club_modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable">
-                    <div class="modal-content" id="modalCont">
-                        <!-- modal header starts here -->
-                        <div class="modal-header">
-                            <h1 class="fw-bold bi bi-people-fill text-start fs-3"> Club</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
-                        </div>
-                        <!-- modal header ends here  -->
-
-                        <!-- modal body starts here  -->
-
-                        <div class="modal-body bg-light">
-                            <div id="Club_info" class="border-0 rounded-3 p-2 pt-3">
-                                <!-- Club logo, name and group link container starts here -->
-                                <div class="row mb-1">
-                                    <!-- Club dp container -->
-                                    <div class="col-2">
-                                        <img src="assets/images/logo.png" id="Club_dp" class="">
-                                    </div>
-                                    <!-- Club name containe -->
-                                    <div class="col-7 text-light text-start" id="Alliance_name">
-                                        <h4 class="mt-2">The name of your Club</h4>
-                                    </div>
-                                    <!-- Club group link container -->
-                                    <div class="col-3">
-                                        <button class="border rounded-pill btn btn-outline-success w-100 text-light mt-2" type="button">
-                                            <!-- <i class="bi bi-chat-dots-fill"></i>  -->
-                                            Chat
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- Club logo and name ends here -->
-
-                                <!-- container for member, level and boost percent starts here -->
-                                <ul class="list-group mb-1">
-                                    <li class="list-group-item text-light">
-                                        <div class="row">
-                                            <div class="col-6 text-start">level:</div>
-                                            <div class="col-6 text-end" id="Club_level">1</div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item text-light">
-                                        <div class="row">
-                                            <div class="col-6 text-start">Members:</div>
-                                            <div class="col-6 text-end">3</div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item text-light">
-                                        <div class="row">
-                                            <div class="col-6 text-start">Mining Boost:</div>
-                                            <div class="col-6 text-end" id="Club_mining_boost">50%</div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <!-- container for member, level and boost percent ends here -->
-
-                                <p class="text-light">Boost your club's level by donating in-game coins! A higher club level means a greater mining boost.</p>
-
-                                <div class="row">
-                                    <div class="col-9 pt-1">
-                                        <div class="progress mb-1" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 25%">25%</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <img src="assets/images/coin.png" class="mb-1" id="coinimg">
-                                        <span id="Target_Amount" class="fs-6 fw-bold text-light">5,900 </span>
-                                    </div>
-                                </div>
-
-                                <!-- button for donate to club starts here -->
-                                <div class="row">
-                                    <div class="col-6">
-                                        <input type="number" placeholder="Min: 1000" class="w-100 p-2 border-0 rounded-3">
-                                    </div>
-                                    <div class="col-6">
-                                        <button class="fw-bold p-2 border-1 rounded-3 ps-4 pe-4 w-100" id="Boost_club_btn">
-                                            <i class="bi bi-rocket-takeoff-fill fw-bold" id="rocket_icon"></i> Boost Club
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- button for donate to club ends here  -->
-                            </div>
-
-                            <!-- cont for club leaderboard starts here -->
-                            <div class="border-0 rounded-3 p-2 pt-3 mt-4" id="Club_Board">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" class="">#</th>
-                                            <th scope="col">Club</th>
-                                            <th scope="col">level</th>
-                                            <th scope="col">boost</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="table-group-divider">
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>The Club Name</td>
-                                            <td>2</td>
-                                            <td>20%</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!--cont for club leaderboard ends here  -->
-
-                        </div>
-                        <!-- modal body ends here -->
-                    </div>
-                </div>
-                <!-- modal box for Club ends here -->
-            </div>
+            <?php include "club_modal.html"; ?>
+            
+            
             <!-- Club ends here  -->
         </div>
     </nav>
