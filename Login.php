@@ -108,9 +108,9 @@ include "auth.php";
 
             <!-- reg info starts here  -->
             <div class="formcont">
-                <label for="#email" class="form-label">Email:</label>
+                <label for="#email" class="form-label fw-bold">Email:</label>
                 <input type="email" id="email" placeholder="Enter Email" class="form-control">
-                <label for="#password" class="form-label">Password:</label>
+                <label for="#password" class="form-label fw-bold">Password:</label>
                 <input type="password" id="password" placeholder="Enter Password" class="form-control">
             </div>
             <!-- reg info ends here  -->
