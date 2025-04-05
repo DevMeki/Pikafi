@@ -14,7 +14,7 @@ include "auth/auth.php";
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body,
-        #Boost_modal_body{
+        #Boost_modal_body {
             background-color: #edfff8;
         }
 
@@ -29,21 +29,26 @@ include "auth/auth.php";
             background-color: #5382AD;
         }
 
-        
-        #CalimBtn{
+        #BoostBtn:hover {
+            background-color: #fff0b5;
+        }
+
+        #CalimBtn {
             background-color: #00d47e;
         }
+
         #CalimBtn:hover,
-        #Modal_body{
+        #Modal_body {
             background-color: #edfff8;
         }
 
         #Pikaficont,
-        #main_miner_cont{
+        #main_miner_cont {
             background-color: #aff9c7;
         }
+
         #upgrade,
-        #PayBills{
+        #PayBills {
             border: none;
             padding: 10px;
             padding-left: 20px;
@@ -51,9 +56,9 @@ include "auth/auth.php";
             background-color: #edfff8;
         }
 
-        
+
         #upgrade:hover,
-        #PayBills:hover{
+        #PayBills:hover {
             background-color: #fff0b5;
         }
 
@@ -76,17 +81,17 @@ include "auth/auth.php";
 
         #Club_info,
         #Club_Board,
-        #Club_info>ul>li{
+        #Club_info>ul>li {
             background-color: #0d2d52;
         }
-        #rocket_icon{
+
+        #rocket_icon {
             color: #fff0b5;
         }
 
-        #New_club_btn:hover{
-            background-color:  #fff0b5;
+        #New_club_btn:hover {
+            background-color: #fff0b5;
         }
-       
     </style>
 </head>
 
@@ -97,7 +102,7 @@ include "auth/auth.php";
 
     <!-- pikafi balance, mining rate and claim starts here  -->
     <div class="text-center text-dark fw-semibold p-3 rounded-3" id="Pikaficont">
-        <div class="">Pikafi Balance</div>
+        <div class="">$PKF Balance</div>
         <img src="assets/images/logo.png" class="mb-2">
         <span id="PikafiBalance" class="fs-1">20,222.34</span>
         <div>
@@ -156,12 +161,12 @@ include "auth/auth.php";
                             <div class="row rounded-3 mt-1 pt-1" id="priceOption">
                                 <div class="col-6 text-start">
                                     <span id="BuyAmount" class="fs-6 fw-bold">%10
-                                        <img src="assets/images/logo.png" class="mb-1"> Boost for 1 day
+                                        <img src="assets/images/logo.png" class=""> Boost for 1 day
                                     </span>
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="assets/images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="mb-1" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">100 </span>
                                     </button>
                                 </div>
@@ -170,12 +175,12 @@ include "auth/auth.php";
                             <div class="row rounded-3 mt-1 pt-1" id="priceOption">
                                 <div class="col-6 text-start">
                                     <span id="BuyAmount" class="fs-6 fw-bold">%20
-                                        <img src="assets/images/logo.png" class="mb-1"> Boost for 1 day
+                                        <img src="assets/images/logo.png" class=""> Boost for 1 day
                                     </span>
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="assets/images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="mb-1" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">600 </span>
                                     </button>
                                 </div>
@@ -189,7 +194,7 @@ include "auth/auth.php";
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="assets/images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="mb-1" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">1500 </span>
                                     </button>
                                 </div>
@@ -203,7 +208,7 @@ include "auth/auth.php";
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="assets/images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="mb-1" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">5000 </span>
                                     </button>
                                 </div>
@@ -220,7 +225,7 @@ include "auth/auth.php";
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="assets/images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="mb-1" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">5,900 </span>
                                     </button>
                                 </div>
@@ -243,14 +248,15 @@ include "auth/auth.php";
             </button>
 
             <?php include "club_modal.html"; ?>
-            
-            
+
+
             <!-- Club ends here  -->
         </div>
     </nav>
 
 
     <!-- active miners starts here -->
+
     <div class=" p-1 rounded-3 fw-bold mb-5" id="main_miner_cont">
         <!-- utility starts here  -->
         <div class="text-center mb-3">
@@ -260,9 +266,12 @@ include "auth/auth.php";
 
             <!-- this timer below counts the amount of time left for the tax and utility bills.
             mining stops once it gets to zero  -->
-            <div id="BillTimer"> 00:D 00:HR 00:SEC </div>
+            <div id="BillTimer"> 00:D 03:HR 59:SEC </div>
         </div>
         <!-- utility ends here  -->
+
+        <P class="text-center">Invest In A Business To Start Earning $PKF. 
+            Its Advisable To Have Several Investments</P>
         <div class="row text-light mb-2">
             <div class="col-md-6">
                 <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-2 mt-md-0">
@@ -422,7 +431,7 @@ include "auth/auth.php";
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
     <!-- active miners ends here -->
@@ -442,7 +451,7 @@ include "auth/auth.php";
                 <div class="modal-body bg-light text-light">
                     <div class="row border-0 rounded-2 p-2 fw-bold mt-2" id="billCont">
                         <div class="col-8">
-                            Set up automatic bill renewal for the next 6 hours.
+                            Set up automatic bill renewal for the next 24 hours.
                         </div>
                         <div class="col-4 text-end">
                             <button type="button" class="rounded-pill border-2 mt-2 p-1 pe-2 ps-2" id="BoostBtn">
@@ -454,7 +463,7 @@ include "auth/auth.php";
 
                     <div class="row border-0 rounded-2 p-2 fw-bold mt-2" id="billCont">
                         <div class="col-8">
-                            Set up automatic bill renewal for the next 12 hours.
+                            Set up automatic bill renewal for the next 2 days.
                         </div>
                         <div class="col-4 text-end">
                             <button type="button" class="rounded-pill border-2 mt-2 p-1 pe-2 ps-2" id="BoostBtn">
@@ -466,7 +475,7 @@ include "auth/auth.php";
 
                     <div class="row border-0 rounded-2 p-2 fw-bold mt-2" id="billCont">
                         <div class="col-8">
-                            Set up automatic bill renewal for the next 24 hours.
+                            Set up automatic bill renewal for the next 4 days hours.
                         </div>
                         <div class="col-4 text-end">
                             <button class="rounded-pill border-2 mt-2 p-1 pe-2 ps-2" id="BoostBtn">
@@ -483,7 +492,7 @@ include "auth/auth.php";
     <!-- modal box for tax and utility bills ends here   -->
 
     <!-- footer starts here -->
-     
+
 
     <!-- footer ends here -->
 
