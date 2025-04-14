@@ -60,14 +60,14 @@
 
             <!-- invited friends starts here -->
              <div class="row text-light m-2">
-                <div class="col-md border rounded-2 m-1" id="FriendCont">
-                    <span class="me-5" id="FriendUsername">Friend's Username</span>
-                    <span id="unclaimedReward" class="ms-5">345.56</span>
+                <div class="col-md row border rounded-2 m-1 p-1" id="FriendCont">
+                    <div class="col-8" id="FriendUsername">Username</div>
+                    <div id="unclaimedReward" class="col-4">345.56</div>
                 </div>
                 
-                <div class="col-md border rounded-2 m-1 " id="FriendCont">
-                    <span class="me-5" id="FriendUsername">Friend's Username</span>
-                    <span id="unclaimedReward" class="ms-5">345.56</span>
+                <div class="col-md row border rounded-2 m-1 p-1" id="FriendCont">
+                    <div class="col-8" id="FriendUsername">Username</div>
+                    <div id="unclaimedReward" class="col-4">345.56</div>
                 </div>
              </div>
              <!-- invited friends ends here -->
