@@ -74,25 +74,25 @@
                                 500
                             </div>
                             <div>
-                                Join our Telegram cahnnel
+                                Join our cahnnel
                             </div>
                         </div>
                         <!-- task details e ds here -->
 
                         <!-- start and claim task button starts here  -->
                         <div class="col-4 mt-1">
-                            <div class="row me-1">
-                                <div class="col-6">
+                            <div class=" me-1">
+                                <div class="">
                                     <button class="border-0 rounded-pill btn" id="Task_start_btn">
                                         Start
                                     </button>
                                 </div>
 
-                                <div class="col-6">
+                                <!-- <div class="col-6">
                                     <button class="border-0 rounded-pill btn" id="Task_claim_btn">
                                         Claim
                                     </button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <!-- start and claim task button starts here  -->
@@ -117,25 +117,25 @@
                                 500
                             </div>
                             <div>
-                                Follow us on Twitter (X)
+                                Follow us on X
                             </div>
                         </div>
                         <!-- task details e ds here -->
 
                         <!-- start and claim task button starts here  -->
                         <div class="col-4 mt-1">
-                            <div class="row me-1">
-                                <div class="col-6">
+                            <div class=" me-1">
+                                <div class="">
                                     <button class="border-0 rounded-pill btn" id="Task_start_btn">
                                         Start
                                     </button>
                                 </div>
 
-                                <div class="col-6">
+                                <!-- <div class="col-6">
                                     <button class="border-0 rounded-pill btn " id="Task_claim_btn">
                                         Claim
                                     </button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <!-- start and claim task button starts here  -->

@@ -46,7 +46,7 @@
             padding: 10%;
         }
 
-        .formcont>input {
+        /* .formcont>input {
             padding-bottom: 3%;
             padding-top: 3%;
             margin-top: 3%;
@@ -54,7 +54,7 @@
             border: none;
             border-bottom: 1px solid #49688D;
             background: none;
-        }
+        } */
 
         /* form ends here  */
 
@@ -107,7 +107,7 @@
             <div class="formcont">
                 <b>Hey!,</b>
                 <label for="email">Forgot your password?</label>
-                <input type="email" id="email" placeholder="Enter Email">
+                <input type="email" id="email" placeholder="Enter Email" class="form-control">
                 <!-- <input type="password" placeholder="password"> -->
             </div>
             <!-- reg info ends here  -->

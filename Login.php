@@ -1,9 +1,10 @@
-<?php 
-    //include auth.php file on all secure pages
-    include "auth.php";
+<?php
+//include auth.php file on all secure pages
+include "auth.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <style>
-
         body {
             /* background-image: url(images/bg.png);
             background-size: cover; */
@@ -50,14 +50,14 @@
             padding: 10%;
         }
 
-        .formcont>input {
+        /* .formcont>input {
             padding: 3%;
             margin-top: 3%;
             width: 100%;
             border: none;
             border-bottom: 1px solid #49688D;
             background: none;
-        }
+        } */
 
         /* form ends here  */
 
@@ -108,8 +108,10 @@
 
             <!-- reg info starts here  -->
             <div class="formcont">
-                <input type="email" id="email" placeholder="Enter Email">
-                <input type="password" id="password" placeholder="Enter Password">
+                <label for="#email" class="form-label fw-bold">Email:</label>
+                <input type="email" id="email" placeholder="Enter Email" class="form-control">
+                <label for="#password" class="form-label fw-bold">Password:</label>
+                <input type="password" id="password" placeholder="Enter Password" class="form-control">
             </div>
             <!-- reg info ends here  -->
 
@@ -130,7 +132,7 @@
         <div class="col-md-4"></div>
     </div>
 
-<script src="login.js"></script>
+    <script src="login.js"></script>
 </body>
 
 </html>

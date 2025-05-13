@@ -88,14 +88,13 @@ include "auth/auth.php";
                             <p class="text-light">Add Your Wallet Address</p>
                             Enter your BEP20 address from a non-custodial wallet such as Metamask, Trust Wallet, or
                             similar.
-                            <input type="text" placeholder="BEP20 or EVM address"
+                            <input type="text" class="form-control" placeholder="BEP20 or EVM address"
                                 class="border-0 w-100 mt-1 border ps-2 rounded-2">
                         </li>
                         <li class="list-group-item mt-2 border rounded-2" id="listItem">
                             <p class="text-light">Update Your Profile Picture</p>
                             <label for="imageUpload">Select an image:</label>
-                            <input type="file" id="imageUpload" name="image-upload" accept="image/*">
-
+                            <input type="file" id="imageUpload" class="form-control" name="image-upload" accept="image/*">
                         </li>
                     </ul>
 

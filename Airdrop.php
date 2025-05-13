@@ -36,12 +36,16 @@ $token = $_SESSION["userToken"];
             background-color: #5382AD;
         }
 
+        #BoostBtn:hover {
+            background-color: #fff0b5;
+        }
 
         #CalimBtn {
             background-color: #00d47e;
         }
 
-        #CalimBtn:hover {
+        #CalimBtn:hover,
+        #Modal_body {
             background-color: #edfff8;
         }
 
@@ -72,7 +76,8 @@ $token = $_SESSION["userToken"];
         #boostCont>button,
         #Club>button,
         #claim,
-        #billCont {
+        #billCont,
+        #New_club_btn {
             background-color: #5382AD;
         }
 
@@ -82,16 +87,17 @@ $token = $_SESSION["userToken"];
         }
 
         #Club_info,
-        #Club_Board {
-            background-color: #024751;
-        }
-
+        #Club_Board,
         #Club_info>ul>li {
-            background-color: #5382AD;
+            background-color: #0d2d52;
         }
 
         #rocket_icon {
             color: #fff0b5;
+        }
+
+        #New_club_btn:hover {
+            background-color: #fff0b5;
         }
     </style>
 </head>
@@ -103,7 +109,7 @@ $token = $_SESSION["userToken"];
 
     <!-- pikafi balance, mining rate and claim starts here  -->
     <div class="text-center text-dark fw-semibold p-3 rounded-3" id="Pikaficont">
-        <div class="">Pikafi Balance</div>
+        <div class="">$PKF Balance</div>
         <img src="assets/images/logo.png" class="mb-2">
         <span id="PikafiBalance" class="fs-1">20,222.34</span>
         <div>
@@ -162,12 +168,12 @@ $token = $_SESSION["userToken"];
                             <div class="row rounded-3 mt-1 pt-1" id="priceOption">
                                 <div class="col-6 text-start">
                                     <span id="BuyAmount" class="fs-6 fw-bold">%10
-                                        <img src="assets/images/logo.png" class="mb-1"> Boost for 1 day
+                                        <img src="assets/images/logo.png" class=""> Boost for 1 day
                                     </span>
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="assets/images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="mb-1" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">100 </span>
                                     </button>
                                 </div>
@@ -176,12 +182,12 @@ $token = $_SESSION["userToken"];
                             <div class="row rounded-3 mt-1 pt-1" id="priceOption">
                                 <div class="col-6 text-start">
                                     <span id="BuyAmount" class="fs-6 fw-bold">%20
-                                        <img src="assets/images/logo.png" class="mb-1"> Boost for 1 day
+                                        <img src="assets/images/logo.png" class=""> Boost for 1 day
                                     </span>
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="assets/images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="mb-1" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">600 </span>
                                     </button>
                                 </div>
@@ -195,7 +201,7 @@ $token = $_SESSION["userToken"];
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="assets/images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="mb-1" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">1500 </span>
                                     </button>
                                 </div>
@@ -209,7 +215,7 @@ $token = $_SESSION["userToken"];
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="assets/images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="mb-1" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">5000 </span>
                                     </button>
                                 </div>
@@ -226,7 +232,7 @@ $token = $_SESSION["userToken"];
                                 </div>
                                 <div class="col-6 text-end">
                                     <button class="rounded-pill border-0 mb-1" id="BoostBtn">
-                                        <img src="assets/images/coin.png" class="" id="coinimg">
+                                        <img src="assets/images/coin.png" class="mb-1" id="coinimg">
                                         <span id="BoostPrice" class="fs-6 fw-bold">5,900 </span>
                                     </button>
                                 </div>
@@ -248,128 +254,16 @@ $token = $_SESSION["userToken"];
                 <i class="bi bi-people-fill text-light"> Club</i>
             </button>
 
-            <!-- modal box for Club starts here -->
-            <div id="Club_modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable">
-                    <div class="modal-content" id="modalCont">
-                        <!-- modal header starts here -->
-                        <div class="modal-header">
-                            <h1 class="fw-bold bi bi-people-fill text-start fs-3"> Club</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
-                        </div>
-                        <!-- modal header ends here  -->
+            <?php include "club_modal.html"; ?>
 
-                        <!-- modal body starts here  -->
 
-                        <div class="modal-body bg-light">
-                            <div id="Club_info" class="border-0 rounded-3 p-2 pt-3">
-                                <!-- Club logo, name and group link container starts here -->
-                                <div class="row mb-1">
-                                    <!-- Club dp container -->
-                                    <div class="col-2">
-                                        <img src="assets/images/logo.png" id="Club_dp" class="">
-                                    </div>
-                                    <!-- Club name containe -->
-                                    <div class="col-7 text-light text-start" id="Alliance_name">
-                                        <h4 class="mt-2">The name of your Club</h4>
-                                    </div>
-                                    <!-- Club group link container -->
-                                    <div class="col-3">
-                                        <button class="border rounded-pill btn btn-outline-success w-100 text-light mt-2" type="button">
-                                            <!-- <i class="bi bi-chat-dots-fill"></i>  -->
-                                            Chat
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- Club logo and name ends here -->
-
-                                <!-- container for member, level and boost percent starts here -->
-                                <ul class="list-group mb-1">
-                                    <li class="list-group-item text-light">
-                                        <div class="row">
-                                            <div class="col-6 text-start">level:</div>
-                                            <div class="col-6 text-end" id="Club_level">1</div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item text-light">
-                                        <div class="row">
-                                            <div class="col-6 text-start">Members:</div>
-                                            <div class="col-6 text-end">3</div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item text-light">
-                                        <div class="row">
-                                            <div class="col-6 text-start">Mining Boost:</div>
-                                            <div class="col-6 text-end" id="Club_mining_boost">50%</div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <!-- container for member, level and boost percent ends here -->
-
-                                <p class="text-light">Boost your club's level by donating in-game coins! A higher club level means a greater mining boost.</p>
-
-                                <div class="row">
-                                    <div class="col-9 pt-1">
-                                        <div class="progress mb-1" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 25%">25%</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <img src="assets/images/coin.png" class="mb-1" id="coinimg">
-                                        <span id="Target_Amount" class="fs-6 fw-bold text-light">5,900 </span>
-                                    </div>
-                                </div>
-
-                                <!-- button for donate to club starts here -->
-                                <div class="row">
-                                    <div class="col-6">
-                                        <input type="number" placeholder="Min: 1000" class="w-100 p-2 border-0 rounded-3">
-                                    </div>
-                                    <div class="col-6">
-                                        <button class="fw-bold p-2 border-1 rounded-3 ps-4 pe-4 w-100" id="Boost_club_btn">
-                                            <i class="bi bi-rocket-takeoff-fill fw-bold" id="rocket_icon"></i> Boost Club
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- button for donate to club ends here  -->
-                            </div>
-
-                            <!-- cont for club leaderboard starts here -->
-                            <div class="border-0 rounded-3 p-2 pt-3 mt-4" id="Club_Board">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" class="">#</th>
-                                            <th scope="col">Club</th>
-                                            <th scope="col">level</th>
-                                            <th scope="col">boost</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="table-group-divider">
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>The Club Name</td>
-                                            <td>2</td>
-                                            <td>20%</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!--cont for club leaderboard ends here  -->
-
-                        </div>
-                        <!-- modal body ends here -->
-                    </div>
-                </div>
-                <!-- modal box for Club ends here -->
-            </div>
             <!-- Club ends here  -->
         </div>
     </nav>
 
 
     <!-- active miners starts here -->
+
     <div class=" p-1 rounded-3 fw-bold mb-5" id="main_miner_cont">
         <!-- utility starts here  -->
         <div class="text-center mb-3">
@@ -379,9 +273,12 @@ $token = $_SESSION["userToken"];
 
             <!-- this timer below counts the amount of time left for the tax and utility bills.
             mining stops once it gets to zero  -->
-            <div id="BillTimer"> 00:D 00:HR 00:SEC </div>
+            <div id="BillTimer"> 00:D 03:HR 59:SEC </div>
         </div>
         <!-- utility ends here  -->
+
+        <P class="text-center">Invest In A Business To Start Earning $PKF. 
+            Its Advisable To Have Several Investments</P>
         <div class="row text-light mb-2">
             <div class="col-md-6">
                 <div id="miner" class="rounded-2 row m-1 ps-5 pe-3 mt-2 mt-md-0">
@@ -579,7 +476,7 @@ $token = $_SESSION["userToken"];
                 <div class="modal-body bg-light text-light">
                     <div class="row border-0 rounded-2 p-2 fw-bold mt-2" id="billCont">
                         <div class="col-8">
-                            Set up automatic bill renewal for the next 6 hours.
+                            Set up automatic bill renewal for the next 24 hours.
                         </div>
                         <div class="col-4 text-end">
                             <button type="button" class="rounded-pill border-2 mt-2 p-1 pe-2 ps-2" id="BoostBtn">
@@ -591,7 +488,7 @@ $token = $_SESSION["userToken"];
 
                     <div class="row border-0 rounded-2 p-2 fw-bold mt-2" id="billCont">
                         <div class="col-8">
-                            Set up automatic bill renewal for the next 12 hours.
+                            Set up automatic bill renewal for the next 2 days.
                         </div>
                         <div class="col-4 text-end">
                             <button type="button" class="rounded-pill border-2 mt-2 p-1 pe-2 ps-2" id="BoostBtn">
@@ -603,7 +500,7 @@ $token = $_SESSION["userToken"];
 
                     <div class="row border-0 rounded-2 p-2 fw-bold mt-2" id="billCont">
                         <div class="col-8">
-                            Set up automatic bill renewal for the next 24 hours.
+                            Set up automatic bill renewal for the next 4 days hours.
                         </div>
                         <div class="col-4 text-end">
                             <button class="rounded-pill border-2 mt-2 p-1 pe-2 ps-2" id="BoostBtn">
